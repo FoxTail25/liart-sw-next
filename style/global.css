@@ -1,0 +1,93 @@
+html {
+    --font-color1:black;
+    --font-color2:#6b001c;
+    --font-header-color: white;
+    --font-aside-color: #5a2100;
+    --background-html: #f4f1db;
+    --background-header: #6b001c;
+    --header-menu-background: #d0cdbb;
+    --background-aside-left: #fffbe0;
+    --background-main: white;
+    --background-aside-right: white;
+    --background-footer: #d0cdbb;
+}
+
+html[data-theme="white"] {
+    --font-color1:black;
+    --font-color2:black;
+    --font-header-color: black;
+    --font-aside-color: black;
+    --background-html: white;
+    --background-header: white;
+    --header-menu-background: white;
+    --background-aside-left: white;
+    --background-main: white;
+    --background-aside-right: white;
+    --background-footer: white;
+}
+
+html[data-theme="black"] {
+    --font-color1:white;
+    --font-color2:white;
+    --font-header-color: white;
+    --font-aside-color: white;
+    --background-html: black;
+    --background-header: black;
+    --header-menu-background: black;
+    --background-aside-left: black;
+    --background-main: black;
+    --background-aside-right: black;
+    --background-footer: black;
+}
+
+html[data-theme="blue"] {
+    --font-color1:rgb(6,52,98);
+    --font-color2:rgb(6,52,98);
+    --font-header-color: rgb(6,52,98);
+    --font-aside-color: rgb(6,52,98);
+    --background-html: rgb(157,209,255);
+    --background-header: rgb(157,209,255);
+    --header-menu-background: rgb(157,209,255);
+    --background-aside-left: rgb(157,209,255);
+    --background-main: rgb(157,209,255);
+    --background-aside-right: rgb(157,209,255);
+    --background-footer: rgb(157,209,255);
+}
+
+html[data-theme="sand"] {
+    --font-color1:rgb(77,75,67);
+    --font-color2:rgb(77,75,67);
+    --font-header-color: rgb(77,75,67);
+    --font-aside-color: rgb(77,75,67);
+    --background-html: rgb(247,243,214);
+    --background-header: rgb(247,243,214);
+    --header-menu-background: rgb(247,243,214);
+    --background-aside-left: rgb(247,243,214);
+    --background-main: rgb(247,243,214);
+    --background-aside-right: rgb(247,243,214);
+    --background-footer: rgb(247,243,214);
+}
+
+html[data-theme="green"] {
+    --font-color1:rgb(169, 228, 77);
+    --font-color2:rgb(169, 228, 77);
+    --font-header-color: rgb(169,228,77);
+    --font-aside-color: rgb(169,228,77);
+    --background-html: rgb(59, 39, 22);
+    --background-header: rgb(59, 39, 22);
+    --header-menu-background: rgb(59,39,22);
+    --background-aside-left: rgb(59, 39, 22);
+    --background-main: rgb(59, 39, 22);
+    --background-aside-right: rgb(59, 39, 22);
+    --background-footer: rgb(59, 39, 22);
+}
+
+body {
+    transition: background .7s, color .3s;
+    background: var(--background-html);
+    color: var(--font-color2);
+}
+.maxWidth {
+    max-width: 1024px;
+    margin: 0 auto;
+}
