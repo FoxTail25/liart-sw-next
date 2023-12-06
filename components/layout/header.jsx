@@ -5,9 +5,9 @@ export default function Header() {
 
 
     return (
-        <div className="maxWidth">
-            <header className={h.header}>
+        <div className={h.container}>
                 <Sw_menu/>
+            <header className={`${h.header} max_width`}>
                 header
             </header>
         </div>

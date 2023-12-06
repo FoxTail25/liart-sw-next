@@ -82,12 +82,23 @@ html[data-theme="green"] {
     --background-footer: rgb(59, 39, 22);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    --transition-bg-time: .7s;
+    --transition-font-time: .7s;
+}
+
 body {
-    transition: background .7s, color .3s;
+    transition: background var(--transition-bg-time), color var(--transition-font-time);
     background: var(--background-html);
     color: var(--font-color2);
+    display: none;
 }
-.maxWidth {
+.max_width {
     max-width: 1024px;
     margin: 0 auto;
+}
+.flex_row {
+    display: flex;
 }

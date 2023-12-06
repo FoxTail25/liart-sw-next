@@ -5,7 +5,7 @@ export default function Layout({ children }) {
     return (
         <div className="layout">
             <Header/>
-            <div className="main">
+            <div className="main max_width flex_row">
                 <aside>left aside</aside>
                 {children}
                 <aside>right aside</aside>
