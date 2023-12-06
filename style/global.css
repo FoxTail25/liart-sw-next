@@ -81,18 +81,29 @@ html[data-theme="green"] {
     --background-aside-right: rgb(59, 39, 22);
     --background-footer: rgb(59, 39, 22);
 }
+html[data-font_size="18px"] {
+    --font-size: 18px;
+}
+html[data-font_size="24px"] {
+    --font-size: 24px;
+}
+html[data-font_size="30px"] {
+    --font-size: 30px;
+}
 
 html, body {
     margin: 0;
     padding: 0;
-    --transition-bg-time: .7s;
-    --transition-font-time: .7s;
+    --transition-bg-time: .5s;
+    --transition-font-time: .2s;
 }
 
 body {
-    transition: background var(--transition-bg-time), color var(--transition-font-time);
     background: var(--background-html);
     color: var(--font-color2);
+    font-size: var(--font-size);
+
+    transition: background var(--transition-bg-time), color var(--transition-font-time);
     display: none;
 }
 .max_width {
