@@ -17,8 +17,6 @@ export default function useThemeFonts() {
 
     }, [themeFonts])
 
-
-
     return [themeFonts, setThemeFonts]
 }
 
