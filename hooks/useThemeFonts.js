@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
+import localTheme from "./themeToLocalstor"
 
 
 export default function useThemeFonts() {
 
-    const [themeFonts, setThemeFonts] = useState(localTheme.getTheme() || 'origin')
+    const [themeFonts, setThemeFonts] = useState(localTheme.getTheme('fontSize') || 'origin')
 
     useEffect(() => {
-        if(themeFonts === 'origin') {
+        if (themeFonts === 'origin') {
             document.documentElement.removeAttribute('data-font_size')
             localTheme.setTheme(themeFonts)
         } else {
@@ -14,28 +15,10 @@ export default function useThemeFonts() {
             localTheme.setTheme(themeFonts)
         }
 
-    },[themeFonts])
+    }, [themeFonts])
 
 
 
     return [themeFonts, setThemeFonts]
 }
-
-class ThemeToLoacalStore {
-
-    setTheme(theme) {
-        theme = JSON.stringify(theme)
-        localStorage.setItem('sw_fontSize', theme)
-    }
-    getTheme() {
-        try {
-            const theme = localStorage.getItem('sw_fontSize')
-            return JSON.parse(theme)
-        } catch(err) {
-            return null
-        }
-    }
-}
-
-let localTheme = new ThemeToLoacalStore()
 

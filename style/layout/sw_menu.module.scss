@@ -1,6 +1,7 @@
 .sw_menu {
     background: rgb(167, 165, 174);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     button {
         text-align: center;

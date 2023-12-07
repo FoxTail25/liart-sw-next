@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import localTheme from "./themeToLocalstor"
 
 
 export default function useThemeLs() {
 
-    const [themeLetterSpasing, setThemeLetterSpasing] = useState(localTheme.getTheme() || 'origin')
+    const [themeLetterSpasing, setThemeLetterSpasing] = useState(localTheme.getTheme('letterSpace') || 'origin')
 
     useEffect(() => {
         if(themeLetterSpasing === 'origin') {
@@ -18,21 +19,3 @@ export default function useThemeLs() {
 
     return [themeLetterSpasing, setThemeLetterSpasing]
 }
-
-class ThemeToLoacalStore {
-
-    setTheme(theme) {
-        theme = JSON.stringify(theme)
-        localStorage.setItem('sw_ls', theme)
-    }
-    getTheme() {
-        try {
-            const theme = localStorage.getItem('sw_ls')
-            return JSON.parse(theme)
-        } catch(err) {
-            return null
-        }
-    }
-}
-
-let localTheme = new ThemeToLoacalStore()
