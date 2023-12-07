@@ -9,12 +9,13 @@ export default function useTheme() {
     useEffect(() => {
         if (theme === 'origin') {
             document.documentElement.removeAttribute('data-theme')
-            localTheme.setTheme(theme)
+            localTheme.setTheme(theme, 'color')
 
         } else {
             document.documentElement.setAttribute('data-theme', theme)
-            localTheme.setTheme(theme)
+            localTheme.setTheme(theme, 'color')
         }
+        
         document.body.style.display = 'block';
 
     }, [theme])

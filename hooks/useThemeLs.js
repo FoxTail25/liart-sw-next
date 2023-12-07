@@ -9,10 +9,10 @@ export default function useThemeLs() {
     useEffect(() => {
         if(themeLetterSpasing === 'origin') {
             document.documentElement.removeAttribute('data-letter_spasing')
-            localTheme.setTheme(themeLetterSpasing)
+            localTheme.setTheme(themeLetterSpasing, 'letterSpace')
         } else {
             document.documentElement.setAttribute('data-letter_spasing', themeLetterSpasing)
-            localTheme.setTheme(themeLetterSpasing)
+            localTheme.setTheme(themeLetterSpasing, 'letterSpace')
         }
 
     },[themeLetterSpasing])

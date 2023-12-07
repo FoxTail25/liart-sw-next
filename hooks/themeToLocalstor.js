@@ -1,6 +1,6 @@
 class ThemeToLoacalStore {
 
-    setTheme(theme, name = 'fontSize') {
+    setTheme(theme, name) {
 
         let themInLocal = this.getTheme()
 

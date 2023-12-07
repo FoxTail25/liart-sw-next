@@ -9,10 +9,10 @@ export default function useThemeFonts() {
     useEffect(() => {
         if (themeFonts === 'origin') {
             document.documentElement.removeAttribute('data-font_size')
-            localTheme.setTheme(themeFonts)
+            localTheme.setTheme(themeFonts, 'fontSize')
         } else {
             document.documentElement.setAttribute('data-font_size', themeFonts)
-            localTheme.setTheme(themeFonts)
+            localTheme.setTheme(themeFonts, 'fontSize')
         }
 
     }, [themeFonts])
