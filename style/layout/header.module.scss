@@ -1,6 +1,6 @@
 .container {
     background: var(--background-header);
-    transition: var(--transition-bg-time);
+    transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time);
 }
 .header {
     min-height: 185px;

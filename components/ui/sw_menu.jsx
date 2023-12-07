@@ -1,9 +1,13 @@
 import useTheme from "../../hooks/useTheme"
+import useThemeFonts from "../../hooks/useThemeFonts"
+import useThemeLs from "../../hooks/useThemeLs"
 import sw from '../../style/layout/sw_menu.module.scss'
-import Sw_button from "./sw_button"
+import Sw_buttonColor from "./sw_button_color"
 
 export default function Sw_menu() {
   const [theme, setTheme] = useTheme()
+  const [themeFonts, setThemeFonts] = useThemeFonts()
+  const [themeLetterSpasing, setThemeLetterSpasing] = useThemeLs()
 
   const themeArr = [
     {
@@ -38,9 +42,11 @@ export default function Sw_menu() {
     }
   ]
 
+  
+
   const themeBtn = () => {
     return themeArr.map(colorTheme => {
-      return < Sw_button key={colorTheme.name}{...{
+      return < Sw_buttonColor key={colorTheme.name}{...{
         colorTheme,
         setTheme
       }} />
@@ -49,6 +55,15 @@ export default function Sw_menu() {
   }
 
   return <nav className={sw.sw_menu}>
+    <button onClick={()=> setThemeLetterSpasing('origin')}>A</button>
+    <button onClick={()=> setThemeLetterSpasing('1px')}>Abc</button>
+    <button onClick={()=> setThemeLetterSpasing('3px')}>Abc</button>
+    <button onClick={()=> setThemeLetterSpasing('5px')}>Abc</button>
+
+    <button onClick={()=> setThemeFonts('origin')}>A</button>
+    <button onClick={()=> setThemeFonts('18px')}>A18</button>
+    <button onClick={()=> setThemeFonts('24px')}>A24</button>
+    <button onClick={()=> setThemeFonts('30px')}>A30</button>
     {themeBtn()}
   </nav>
 }

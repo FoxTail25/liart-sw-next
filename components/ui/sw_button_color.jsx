@@ -1,4 +1,4 @@
-export default function Sw_button({ colorTheme, setTheme }) {
+export default function Sw_buttonColor({ colorTheme, setTheme }) {
     return <>
         <button
             

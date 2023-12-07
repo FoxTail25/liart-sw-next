@@ -10,6 +10,10 @@ html {
     --background-main: white;
     --background-aside-right: white;
     --background-footer: #d0cdbb;
+
+    --font-size: auto;
+
+    --letter-spasing: normal; 
 }
 
 html[data-theme="white"] {
@@ -81,6 +85,8 @@ html[data-theme="green"] {
     --background-aside-right: rgb(59, 39, 22);
     --background-footer: rgb(59, 39, 22);
 }
+
+
 html[data-font_size="18px"] {
     --font-size: 18px;
 }
@@ -91,19 +97,39 @@ html[data-font_size="30px"] {
     --font-size: 30px;
 }
 
+
+
+html[data-letter_spasing="1px"] {
+    --letter-spasing: 1px;
+}
+html[data-letter_spasing="3px"] {
+    --letter-spasing: 3px;
+}
+html[data-letter_spasing="5px"] {
+    --letter-spasing: 5px;
+}
+
+
+
 html, body {
     margin: 0;
     padding: 0;
     --transition-bg-time: .5s;
-    --transition-font-time: .2s;
+    --transition-color-time: .2s;
+    --transition-font-size-time: .1s;
+    --transition-letter-spasing-time: .1s;
 }
 
 body {
     background: var(--background-html);
     color: var(--font-color2);
+
     font-size: var(--font-size);
 
-    transition: background var(--transition-bg-time), color var(--transition-font-time);
+    letter-spacing: var(--letter-spasing);
+
+    transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+
     display: none;
 }
 .max_width {
