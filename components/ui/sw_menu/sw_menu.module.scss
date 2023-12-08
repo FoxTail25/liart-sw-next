@@ -1,0 +1,28 @@
+.sw_menu {
+    background: rgb(167, 165, 174);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    .btn_block {
+        margin: 2px 5px;
+        display: flex;
+        flex-direction: row;
+        button {
+            text-align: center;
+            margin: 3px 3px;
+            border-radius: 3px;
+            border: 1px solid transparent;
+            min-width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            line-height: 32px;
+        }
+    }
+}

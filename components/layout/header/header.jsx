@@ -1,5 +1,5 @@
-import Sw_menu from "../ui/sw_menu";
-import h from '../../style/layout/header.module.scss'
+import Sw_menu from '../../ui/sw_menu/sw_menu'
+import h from './header.module.scss'
 
 export default function Header() {
 
