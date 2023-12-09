@@ -4,8 +4,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    transition: .5s;
+    min-height: 40px;
+    transition: .2s;
+    position: sticky;
+    top: 0;
 
     font-size: 18px;
     .btn_block {
@@ -34,6 +36,6 @@
 }
 .off{
     // display: none;
-    transition: .5s;
-    height: 0px;
+    transition: .3s;
+    min-height: 0px;
 }
