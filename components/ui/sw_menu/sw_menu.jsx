@@ -4,6 +4,8 @@ import useThemeLs from "../../../hooks/useThemeLs"
 import sw from './sw_menu.module.scss'
 import Sw_buttonColor from "../sw_color_btn/sw_color_btn"
 import Sw_font_btn from "../sw_font_btn/sw_font_btn"
+import { useContext } from "react"
+import myContext from "../../../store/myContext"
 
 export default function Sw_menu() {
   const [theme, setTheme] = useTheme()
@@ -70,7 +72,7 @@ export default function Sw_menu() {
     }
   ]
 
-  const themeLetterSpasingArr =[
+  const themeLetterSpasingArr = [
     {
       name: 'letterSpacing',
       property: "1px",
@@ -102,22 +104,31 @@ export default function Sw_menu() {
     }
   </div>
 
-    const getFontSizeBtn = (arr, text) =>
-      arr.map( e => <Sw_font_btn key={e.property} {...{...e, ...{content:text}}}/>)
-    
+  const getFontSizeBtn = (arr, text) =>
+    arr.map(e => <Sw_font_btn key={e.property} {...{ ...e, ...{ content: text } }} />)
 
-  return <nav className={sw.sw_menu}>
-    <div className={sw.btn_block}>
-      {getFontSizeBtn(themeLetterSpasingArr, 'АБВ')}
-    </div>
+  const context = useContext(myContext).sw_menu.sw_menu_vision
+  console.log(context)
 
+
+  return <nav className={[context ? sw.off : sw.sw_menu]}>
+    {
+    !context
+    ?<>
     <div className={sw.btn_block}>
       {getFontSizeBtn(themeFontSizeArr, 'A')}
-      
+    </div>
+
+<div className={sw.btn_block}>
+      {getFontSizeBtn(themeLetterSpasingArr, 'АБВ')}
+
     </div>
     {colorThemeBtn()}
     <div className={sw.btn_block}>
       <button onClick={getOriginTheme}>Origin</button>
     </div>
+    </>
+    :null
+    }
   </nav>
 }

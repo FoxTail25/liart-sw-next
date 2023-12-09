@@ -4,18 +4,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 40px;
+    transition: .5s;
 
     font-size: 18px;
-
     .btn_block {
         margin: 2px 5px;
         display: flex;
         flex-direction: row;
+        
         button {
             text-align: center;
             margin: 3px 3px;
-            border-radius: 3px;
-            border: 1px solid transparent;
+            border-radius: 5px;
+            border: 2px solid transparent;
             min-width: 32px;
             height: 32px;
             display: flex;
@@ -23,6 +25,15 @@
             justify-content: center;
             padding: 2px;
             line-height: 32px;
+            &:hover {
+                border: 2px solid orange;
+                
+            }
         }
     }
+}
+.off{
+    // display: none;
+    transition: .5s;
+    height: 0px;
 }

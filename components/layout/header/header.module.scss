@@ -8,6 +8,7 @@
     width: 100%;
     display: flex;
     .content {
+        width: calc(var(--maxwidth) - var(--header_aside_width )*2);
         h5 {
             margin-bottom: 0;
             font-family: 'PT Serif', serif;
@@ -24,5 +25,6 @@
             font-size: var(--font-size20);
         }
         margin-left: 25px;
+
     }
 }

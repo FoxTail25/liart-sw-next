@@ -16,7 +16,10 @@ html {
 
     --letter-spasing: normal; 
 
-    --font: 13px/1.5 'Helvetica Neue', Arial, sans-serif
+    --font: 13px/1.5 'Helvetica Neue', Arial, sans-serif;
+
+    --maxwidth: 1024px;
+    --header_aside_width: 235px
 }
 
 html[data-theme="white"] {
@@ -139,7 +142,7 @@ body {
     display: none;
 }
 .max_width {
-    max-width: 1024px;
+    max-width: var(--maxwidth);
     margin: 0 auto;
 }
 .flex_row {

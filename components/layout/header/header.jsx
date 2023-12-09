@@ -1,5 +1,6 @@
 import Sw_menu from '../../ui/sw_menu/sw_menu'
-import LogoRGBI from '../logo/logo'
+import H_links from '../h_links/h_links'
+import LogoRGBI from '../h_logo/logo'
 import h from './header.module.scss'
 
 export default function Header() {
@@ -16,7 +17,7 @@ export default function Header() {
                     <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br/>БИБЛИОТЕКА ИСКУССТВ</h2>
                     <p>"Искусство помогать искусству"</p>
                 </div>
-                <div className='links'></div>
+                <H_links/>
             </header>
         </div>
     )
