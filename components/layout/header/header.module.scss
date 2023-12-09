@@ -4,4 +4,25 @@
 }
 .header {
     min-height: 185px;
+    color: var(--font-header-color);
+    width: 100%;
+    display: flex;
+    .content {
+        h5 {
+            margin-bottom: 0;
+            font-family: 'PT Serif', serif;
+            font-weight: normal;
+        }
+        h2 {
+            margin-top: 5px;
+            font-family: 'PT Serif', serif;
+            font-weight: normal;
+        }
+        p{
+            font: var(--font);
+            margin-top: 10px;
+            font-size: var(--font-size20);
+        }
+        margin-left: 25px;
+    }
 }

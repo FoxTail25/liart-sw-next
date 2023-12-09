@@ -12,8 +12,11 @@ html {
     --background-footer: #d0cdbb;
 
     --font-size: auto;
+    --font-size20: 20px;
 
     --letter-spasing: normal; 
+
+    --font: 13px/1.5 'Helvetica Neue', Arial, sans-serif
 }
 
 html[data-theme="white"] {
@@ -89,12 +92,15 @@ html[data-theme="green"] {
 
 html[data-font_size="18px"] {
     --font-size: 18px;
+    --font-size20: 18px;
 }
 html[data-font_size="24px"] {
     --font-size: 24px;
+    --font-size20: 24px;
 }
 html[data-font_size="30px"] {
     --font-size: 30px;
+    --font-size20: 30px;
 }
 
 

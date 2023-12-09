@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        <title>Российская государственная библиотека искусств</title>
         <meta name="keywords" content="искусство, библиотека, театр" />
         <meta name="description" content="РГБИ - крупнейшая специальная библиотека по искусству, обладающая ценными собраниями книг, периодических изданий, иконографических материалов." />
         <meta name="DC.Title" lang="ru" content="Российская государственная библиотека искусств" />
