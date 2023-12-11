@@ -12,7 +12,7 @@
     font-size: 18px;
     .btn_block {
         margin: 2px 5px;
-        display: flex;
+        display: inherit;
         flex-direction: row;
         
         button {

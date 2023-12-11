@@ -6,6 +6,7 @@ import Sw_buttonColor from "../sw_color_btn/sw_color_btn"
 import Sw_font_btn from "../sw_font_btn/sw_font_btn"
 import { useContext } from "react"
 import myContext from "../../../store/myContext"
+import { themeArr, themeFontSizeArr, themeLetterSpasingArr } from "../../../data/themeData"
 
 export default function Sw_menu() {
   const [theme, setTheme] = useTheme()
@@ -18,81 +19,6 @@ export default function Sw_menu() {
     setThemeLetterSpasing('origin')
   }
 
-  const themeArr = [
-    {
-      name: 'origin',
-      color: '',
-      bg: '',
-    },
-    {
-      name: 'white',
-      color: 'black',
-      bg: 'white',
-    },
-    {
-      name: 'black',
-      color: 'white',
-      bg: 'black',
-    },
-    {
-      name: 'blue',
-      color: 'rgb(6,52,98)',
-      bg: 'rgb(157,209,255)',
-    },
-    {
-      name: 'sand',
-      color: 'rgb(77,75,67)',
-      bg: 'rgb(247,243,214)',
-    },
-    {
-      name: 'green',
-      color: 'rgb(169, 228, 77)',
-      bg: 'rgb(59, 39, 22)',
-    }
-  ]
-
-  const themeFontSizeArr = [
-    {
-      name: 'fontSize',
-      property: "18px",
-      description: "Размер шрифта 18рх",
-      func: setThemeFonts
-    },
-    {
-      name: 'fontSize',
-      property: "24px",
-      description: "Размер шрифта 24рх",
-      func: setThemeFonts
-    },
-    {
-      name: 'fontSize',
-      property: "30px",
-      description: "Размер шрифта 30рх",
-      func: setThemeFonts
-    }
-  ]
-
-  const themeLetterSpasingArr = [
-    {
-      name: 'letterSpacing',
-      property: "1px",
-      description: "Расстояние между буквами 1рх",
-      func: setThemeLetterSpasing
-    },
-    {
-      name: 'letterSpacing',
-      property: "3px",
-      description: "Расстояние между буквами 3рх",
-      func: setThemeLetterSpasing
-    },
-    {
-      name: 'letterSpacing',
-      property: "5px",
-      description: "Расстояние между буквами 5рх",
-      func: setThemeLetterSpasing
-    }
-  ]
-
   const colorThemeBtn = () => <div className={sw.btn_block}>
     {
       themeArr.filter(e => e.name != 'origin').map(colorTheme =>
@@ -104,31 +30,31 @@ export default function Sw_menu() {
     }
   </div>
 
-  const getFontSizeBtn = (arr, text) =>
-    arr.map(e => <Sw_font_btn key={e.property} {...{ ...e, ...{ content: text } }} />)
+  const getFontSizeBtn = (arr, text, setfunc) =>
+    arr.map(e => <Sw_font_btn key={e.property} {...{ ...e, ...{ content: text, func: setfunc} }} />)
 
   const context = useContext(myContext).sw_menu.sw_menu_vision
-  console.log(context)
 
+  return <nav className={[context ? sw.sw_menu : sw.off]} 
+  suppressHydrationWarning
+  >
 
-  return <nav className={[context ? sw.off : sw.sw_menu]}>
     {
-    !context
-    ?<>
-    <div className={sw.btn_block}>
-      {getFontSizeBtn(themeFontSizeArr, 'A')}
-    </div>
+      context && <>
+        <div className={sw.btn_block} suppressHydrationWarning>
+          {getFontSizeBtn(themeFontSizeArr, 'A', setThemeFonts)}
+        </div>
 
-<div className={sw.btn_block}>
-      {getFontSizeBtn(themeLetterSpasingArr, 'АБВ')}
+        <div className={sw.btn_block} suppressHydrationWarning>
+          {getFontSizeBtn(themeLetterSpasingArr, 'АБВ', setThemeLetterSpasing)}
 
-    </div>
-    {colorThemeBtn()}
-    <div className={sw.btn_block}>
-      <button onClick={getOriginTheme}>Origin</button>
-    </div>
-    </>
-    :null
+        </div>
+        {colorThemeBtn()}
+        <div className={sw.btn_block} suppressHydrationWarning>
+          <button onClick={getOriginTheme} title="Цветовая схема по умолчанию">Origin</button>
+        </div>
+      </>
+
     }
   </nav>
 }

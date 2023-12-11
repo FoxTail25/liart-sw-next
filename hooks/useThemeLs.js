@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import localTheme from "./themeToLocalstor"
+import localTheme from "../utils/themeToLocalstor"
 
 
 export default function useThemeLs() {

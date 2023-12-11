@@ -1,13 +1,29 @@
+
+
 import Head from 'next/head'
 import '../style/global.css'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState, useLayoutEffect } from 'react'
 import myContext from '../store/myContext'
+import localTheme from '../utils/themeToLocalstor'
 
 export default function App({ Component, pagePrors }) {
 
-    let [sw_menu_vision, setSw_menu_vision] = useState(false)
+    useEffect(()=> {
+
+        let sw_switch = localTheme.getTheme('sw_button')
+        setSw_menu_visible(sw_switch || false)
+    },[])
+
+    let [sw_menu_vision, setSw_menu_visible] = useState()
 
     let context = useContext(myContext)
+
+    const setSw_menu_vision =(switcher) => {
+        setSw_menu_visible(switcher)
+        localTheme.setTheme(switcher, 'sw_button')
+    }
+
+
 
     const contextSWandLANG = {
         lang : 'ru',
