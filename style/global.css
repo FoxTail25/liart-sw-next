@@ -10,8 +10,10 @@ html {
     --background-main: white;
     --background-aside-right: white;
     --background-footer: #d0cdbb;
+    --background-header-image: url('/header/background_logo_ru.png')center no-repeat;
 
     --font-size: auto;
+    --font-size10: 10.5px;
     --font-size20: 20px;
 
     --letter-spasing: normal; 
@@ -34,6 +36,7 @@ html[data-theme="white"] {
     --background-main: white;
     --background-aside-right: white;
     --background-footer: white;
+    --background-header-image:white;
 }
 
 html[data-theme="black"] {
@@ -48,6 +51,7 @@ html[data-theme="black"] {
     --background-main: black;
     --background-aside-right: black;
     --background-footer: black;
+    --background-header-image:black;
 }
 
 html[data-theme="blue"] {
@@ -62,6 +66,7 @@ html[data-theme="blue"] {
     --background-main: rgb(157,209,255);
     --background-aside-right: rgb(157,209,255);
     --background-footer: rgb(157,209,255);
+    --background-header-image:rgb(157,209,255);
 }
 
 html[data-theme="sand"] {
@@ -76,6 +81,8 @@ html[data-theme="sand"] {
     --background-main: rgb(247,243,214);
     --background-aside-right: rgb(247,243,214);
     --background-footer: rgb(247,243,214);
+    --background-header-image:rgb(247,243,214);
+    
 }
 
 html[data-theme="green"] {
@@ -90,19 +97,23 @@ html[data-theme="green"] {
     --background-main: rgb(59, 39, 22);
     --background-aside-right: rgb(59, 39, 22);
     --background-footer: rgb(59, 39, 22);
+    --background-header-image:rgb(59, 39, 22);
 }
 
 
 html[data-font_size="18px"] {
     --font-size: 18px;
+    --font-size10: 18px;
     --font-size20: 18px;
 }
 html[data-font_size="24px"] {
     --font-size: 24px;
+    --font-size10: 18px;
     --font-size20: 24px;
 }
 html[data-font_size="30px"] {
     --font-size: 30px;
+    --font-size10: 18px;
     --font-size20: 30px;
 }
 

@@ -1,22 +1,84 @@
 .links_block {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 
-    svg {
-        cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 185px;
+
+    .block1 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (max-width: 1024px) {
+            justify-content: space-around;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+
+        span {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 5px;
+            // height: 20px;
+            margin: 0 0 0 12px;
+
+            &.active {
+                background-color: var(--font-header-color);
+                color: var(--background-header);
+            }
+        }
     }
 
-    span {
-        cursor: pointer;
-        display: inline-block;
-        padding: 3px 5px;
-        // height: 20px;
-        margin: 0 0 0 12px;
+    .block2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        &.active {
-            background-color: var(--font-header-color);
-            color: var(--background-header);
+        .vk {
+            div {
+                width: 32px;
+                height: 32px;
+                background: url('/header/links/vk1.png') center no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .rutube {
+            div {
+                width: 80px;
+                height: 32px;
+                background: url('/header/links/Rutube_74_30.jpg') center no-repeat;
+                background-size: cover;
+            }
+        }
+
+        .wifi {
+            div {
+                width: 40px;
+                height: 42px;
+                background: url('/header/links/wifi.png') center no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .block3 {
+
+        
+        // justify-content: end;
+        a {
+            display: block;
+            text-align: end;
+            font-size: var(--font-size10);
+            color: var(--font-header-color);
+            margin-bottom: 7px;
+            text-decoration: none;
+            @media (max-width: 1024px) {
+                text-align: center;
+            }
         }
     }
 }
