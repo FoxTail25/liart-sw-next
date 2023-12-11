@@ -16,9 +16,9 @@
     
     .content {
         width: calc(var(--maxwidth) - var(--header_aside_width)*2);
+        transition: background var(--transition-bg-time);
         background: var(--background-header-image);
         background-size: contain;
-        transition: background var(--transition-bg-time);
 
         h5 {
             margin-bottom: 0;
@@ -38,7 +38,6 @@
             font-size: var(--font-size20);
         }
 
-        // margin-left: 25px;
         padding-left: 25px;
         box-sizing: border-box;
 
@@ -53,7 +52,7 @@
         
         
         justify-content: center;
-        background-position: top;
+        // background-position: top;
         
         .logoRGBI {
             order: 1;
@@ -79,6 +78,7 @@
             } 
             .header_links {
                 margin-bottom: 10px;
+                display: none;
             }
         }
     }
