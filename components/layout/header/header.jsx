@@ -10,14 +10,17 @@ export default function Header() {
         <div className={h.container}>
             <Sw_menu />
             <header className={`${h.header} max_width`}>
-                {/* <div className='logo'></div> */}
+                <div className={h.logoRGBI}>
                 <LogoRGBI />
+                </div>
                 <div className={h.content}>
                     <h5>Федеральное государственное бюджетное учреждение культуры</h5>
                     <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br/>БИБЛИОТЕКА ИСКУССТВ</h2>
                     <p>"Искусство помогать искусству"</p>
                 </div>
+                <div className={h.header_links}>
                 <H_links/>
+                </div>
             </header>
         </div>
     )

@@ -1,8 +1,8 @@
-import l from './logo.module.scss'
+// import l from './logo.module.scss'
 
 export default function LogoRGBI() {
 
-    return <div className={l.logoRGBI}>
+    return <>
         <svg x="0px" y="0px" viewBox="0 0 97.3 62" fill="var(--font-header-color)">
             <path d="M86.1,40.7c-0.2,0-0.4,0-0.5-0.1c-0.2-0.1-0.3-0.2-0.3-0.4c0,0,0.2,0,0.7,0.2s0.5-0.6,0.4-0.7c-0.2-0.1,0.1,0-0.4-0.1
         c-0.1,0-0.3-0.1-0.6-0.2c0-0.2,0.1-0.5,0.1-0.6c0-0.2-0.1-0.3-0.1-0.5c0.2-0.5,0.7,0.1,1,0.2c0.4,0.1,0.8-0.1,1,0.2
@@ -248,5 +248,5 @@ c-0.1,0.2-0.2,0.4-0.2,0.6s0,0.4,0,0.5c0,0.1,0.1,0.3,0.2,0.4s0.2,0.2,0.4,0.3C74.7
             </g>
         </svg>
 
-    </div>
+    </>
 }

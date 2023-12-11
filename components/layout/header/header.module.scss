@@ -7,6 +7,9 @@
     color: var(--font-header-color);
     width: 100%;
     display: flex;
+    .logoRGBI {
+        width: var(--header_aside_width);
+    }
     .content {
         width: calc(var(--maxwidth) - var(--header_aside_width )*2);
         h5 {
@@ -26,5 +29,9 @@
         }
         margin-left: 25px;
 
+    }
+    .header_links {
+        width: var(--header_aside_width);
+        padding-top: 10px;
     }
 }
