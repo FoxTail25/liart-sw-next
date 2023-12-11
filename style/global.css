@@ -1,6 +1,7 @@
 html {
     --font-color1:black;
     --font-color2:#6b001c;
+    --font-color-header-hover:#6b001c;
     --font-header-color: white;
     --font-aside-color: #5a2100;
     --background-html: #f4f1db;
@@ -28,11 +29,12 @@ html {
 html[data-theme="white"] {
     --font-color1:black;
     --font-color2:black;
+    --font-color-header-hover:white;
     --font-header-color: black;
     --font-aside-color: black;
     --background-html: white;
     --background-header: white;
-    --header-menu-background: white;
+    --header-menu-background: black;
     --background-aside-left: white;
     --background-main: white;
     --background-aside-right: white;
@@ -43,11 +45,12 @@ html[data-theme="white"] {
 html[data-theme="black"] {
     --font-color1:white;
     --font-color2:white;
+    --font-color-header-hover:black;
     --font-header-color: white;
     --font-aside-color: white;
     --background-html: black;
     --background-header: black;
-    --header-menu-background: black;
+    --header-menu-background: white;
     --background-aside-left: black;
     --background-main: black;
     --background-aside-right: black;
@@ -58,11 +61,12 @@ html[data-theme="black"] {
 html[data-theme="blue"] {
     --font-color1:rgb(6,52,98);
     --font-color2:rgb(6,52,98);
+    --font-color-header-hover:rgb(157,209,255);
     --font-header-color: rgb(6,52,98);
     --font-aside-color: rgb(6,52,98);
     --background-html: rgb(157,209,255);
     --background-header: rgb(157,209,255);
-    --header-menu-background: rgb(157,209,255);
+    --header-menu-background: rgb(6,52,98);
     --background-aside-left: rgb(157,209,255);
     --background-main: rgb(157,209,255);
     --background-aside-right: rgb(157,209,255);
@@ -73,11 +77,12 @@ html[data-theme="blue"] {
 html[data-theme="sand"] {
     --font-color1:rgb(77,75,67);
     --font-color2:rgb(77,75,67);
+    --font-color-header-hover:rgb(247,243,214);
     --font-header-color: rgb(77,75,67);
     --font-aside-color: rgb(77,75,67);
     --background-html: rgb(247,243,214);
     --background-header: rgb(247,243,214);
-    --header-menu-background: rgb(247,243,214);
+    --header-menu-background: rgb(77,75,67);
     --background-aside-left: rgb(247,243,214);
     --background-main: rgb(247,243,214);
     --background-aside-right: rgb(247,243,214);
@@ -89,11 +94,12 @@ html[data-theme="sand"] {
 html[data-theme="green"] {
     --font-color1:rgb(169, 228, 77);
     --font-color2:rgb(169, 228, 77);
+    --font-color-header-hover:rgb(59, 39, 22);
     --font-header-color: rgb(169,228,77);
     --font-aside-color: rgb(169,228,77);
     --background-html: rgb(59, 39, 22);
     --background-header: rgb(59, 39, 22);
-    --header-menu-background: rgb(59,39,22);
+    --header-menu-background: rgb(169,228,77);
     --background-aside-left: rgb(59, 39, 22);
     --background-main: rgb(59, 39, 22);
     --background-aside-right: rgb(59, 39, 22);

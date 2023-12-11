@@ -10,7 +10,9 @@
         justify-content: center;
         align-items: center;
         height: 60px;
-        color: #6b001c;
+        color: var(--font-color2);
+        transition: var(--transition-color-time);
+        border-radius: 5px;
 
         span {
             font-weight: 600;
@@ -29,7 +31,9 @@
         
         
         &.active, &:hover {
-            background: #e0dcd0;
+            transition: var(--transition-color-time);
+            background: var(--header-menu-background);
+            color: var(--font-color-header-hover);
         }
 
 
