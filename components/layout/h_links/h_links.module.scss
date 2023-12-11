@@ -1,23 +1,22 @@
-.header_links {
-    width: var(--header_aside_width);
-    padding-top: 10px;
-    .links_block {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        svg {
-            cursor: pointer;
-        }
-        span {
-            cursor: pointer;
-            display: inline-block;
-            padding: 3px 5px;
-            // height: 20px;
-            margin: 0 0 0 12px;
-            &.active {
-                background-color: var(--font-header-color);
-                color: var(--background-header);
-            }
+.links_block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+        cursor: pointer;
+    }
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 3px 5px;
+        // height: 20px;
+        margin: 0 0 0 12px;
+
+        &.active {
+            background-color: var(--font-header-color);
+            color: var(--background-header);
         }
     }
 }
