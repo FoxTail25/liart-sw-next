@@ -1,0 +1,38 @@
+.layout {
+    
+    transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+    
+    .main {
+        
+        transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+        
+        text-align: center;
+        
+        aside {
+            transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+
+            width: var(--main_aside_width);
+            
+            &.left {
+                background-color: var(--background-aside-left);
+            }
+            
+            &.right {
+                background-color: var(--background-aside-right);
+            }
+        }
+        
+        main {
+            width: calc(var(--maxwidth) - var(--main_aside_width) * 2);
+            
+        }
+    }
+    
+    footer {
+        transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
+
+        background-color: var(--background-footer);
+        text-align: center;
+    }
+
+}

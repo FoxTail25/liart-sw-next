@@ -31,15 +31,24 @@ export default function HeaderMenu() {
         },
         {
             nameHref: ["КОНТАКТЫ", '/contact'],
-            subMenu: null
+            subMenu: 1
         },
     ]
 
     let menuItem = menu.map( (el, ind) => <MenuItem key={ind}{...el}/>)
 
+    let mobilMenuItem = () => {
+        return <p> mobil menu </p>
+    }
+
     return (
-        <nav className={h.nav}>
+        <>
+        <nav className={h.desktop_nav}>
             {menuItem}
         </nav>
+        <nav className={h.mobil_nav}>
+            {mobilMenuItem()}
+        </nav>
+        </>
     )
 }

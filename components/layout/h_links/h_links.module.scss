@@ -75,8 +75,11 @@
 
         .wifi {
             div {
+                svg {
+                    fill-rule:evenodd;
+                }
                 width: 40px;
-                height: 42px;
+                // height: 40px;
                 // background: url('/header/links/wifi.png') center no-repeat;
                 // background-size: contain;
             }
