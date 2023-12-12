@@ -8,10 +8,10 @@
     .block1 {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
 
         @media (max-width: 1024px) {
-            justify-content: space-around;
+            // justify-content: space-around;
         }
 
         svg {
@@ -34,29 +34,42 @@
 
     .block2 {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+
       
         a{
             color: transparent;
             text-decoration: none;
+            position: relative;
+            height: 32px;
+            div{
+                position: absolute;
+            }
         }
-
+        
         .vk {
+            display: inline;
             div {
                 width: 32px;
                 height: 32px;
-                background: url('/header/links/vk1.png') center no-repeat;
-                background-size: contain;
+                // background: url('/header/links/vk1.png') center no-repeat;
+                // background: url('/header/links/vk.svg') center no-repeat;
+                // background-size: contain;
             }
         }
 
         .rutube {
             div {
-                width: 80px;
-                height: 32px;
-                background: url('/header/links/Rutube_74_30.jpg') center no-repeat;
-                background-size: cover;
+                width: 60px;
+                height: 24px;
+                border-radius: 5px;
+                background: var(--icon-rutube-bg);
+                padding: 4px;
+                display: flex;
+                align-items: center;
+                // background: url('/header/links/Rutube_74_30.jpg') center no-repeat;
+                // background-size: cover;
             }
         }
 
