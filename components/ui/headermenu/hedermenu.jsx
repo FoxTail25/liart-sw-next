@@ -1,32 +1,35 @@
 
+import { useState } from 'react'
 import MenuItem from '../menuitem/menu_item'
 import h from './headrmenu.module.scss'
 
 export default function HeaderMenu() {
 
+    let [mobilMenuOpen, setMobilMenuOpen] = useState(false)
+
     let menu = [
         {
-            nameHref: ["НОВОСТИ",'/'],
+            nameHref: ["НОВОСТИ", '/'],
             subMenu: null
         },
         {
-            nameHref: ["О БИБЛИОТЕКЕ",'/about'],
+            nameHref: ["О БИБЛИОТЕКЕ", '/about'],
             subMenu: null
         },
         {
-            nameHref: ["УСЛУГИ",'/service'],
+            nameHref: ["УСЛУГИ", '/service'],
             subMenu: null
         },
         {
-            nameHref: ["ФОНДЫ",'/fonds'],
+            nameHref: ["ФОНДЫ", '/fonds'],
             subMenu: null
         },
         {
-            nameHref: ["КАТАЛОГИ",'/catalog'],
+            nameHref: ["КАТАЛОГИ", '/catalog'],
             subMenu: null
         },
         {
-            nameHref: ["ЭЛЕКТРОННЫЕ РЕСУРСЫ",'/elres'],
+            nameHref: ["ЭЛЕКТРОННЫЕ РЕСУРСЫ", '/elres'],
             subMenu: null
         },
         {
@@ -35,20 +38,34 @@ export default function HeaderMenu() {
         },
     ]
 
-    let menuItem = menu.map( (el, ind) => <MenuItem key={ind}{...el}/>)
+    let menuItem = menu.map((el, ind) => <MenuItem key={ind}{...el} />)
 
-    let mobilMenuItem = () => {
-        return <p> mobil menu </p>
-    }
+
 
     return (
         <>
-        <nav className={h.desktop_nav}>
-            {menuItem}
-        </nav>
-        <nav className={h.mobil_nav}>
-            {mobilMenuItem()}
-        </nav>
+            <nav className={h.desktop_menu}>
+                {menuItem}
+            </nav>
+            <div className={h.mobil_menu} onClick={() => setMobilMenuOpen(!mobilMenuOpen)}>
+                {mobilMenuOpen && <nav>
+                {menuItem}
+                </nav>}
+               
+
+                <span>МЕНЮ</span>
+                <div className={
+                    mobilMenuOpen
+                        ? `${h.burger_menu} ${h.active}`
+                        : h.burger_menu
+                }>
+
+                    <span className="line1"></span>
+                    <span className="line2"></span>
+                    <span className="line3"></span>
+                </div>
+
+            </div>
         </>
     )
 }

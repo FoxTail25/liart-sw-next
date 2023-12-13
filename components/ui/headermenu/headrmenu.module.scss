@@ -1,15 +1,99 @@
-.desktop_nav {
+.desktop_menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     @media (max-width: 600px) {
         display: none;
     }
 }
-.mobil_nav {
+
+.mobil_menu {
+    margin: 10px 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: relative;
+
+    :not(nav) {
+        margin-right: 10px;
+    }
+
+    nav {
+        position: absolute;
+        border: 1px solid var(--font-color2);
+        border-radius: 10px;
+        background: var(--background-aside-left);
+        z-index: 3;
+        top: 30px;
+
+        
+        a {
+            padding: 0 20px;
+            
+            span {
+                max-width: 260px;
+                
+            }
+        }
+        @media (max-width: 360px) {
+            a{
+                padding: 0;
+                span {
+                    padding: 0;
+                }
+            }
+        }
+ 
+
+    }
+
+    span {
+        font-size: 28px;
+        line-height: 30px;
+        margin-right: 10px;
+
+    }
+    
+
+    .burger_menu {
+
+        height: 30px;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        span {
+            width: inherit;
+            height: 5px;
+            background: var(--font-color2);
+            // box-sizing: border-box;
+            border-radius: 10px;
+            transition: .3s;
+        }
+
+        &.active {
+
+
+            :first-child {
+                // transform:  ;
+                transform: translate(0, 12.5px) rotate(45deg);
+                transform-origin: center center;
+                // width: 40px;
+            }
+
+            :nth-child(2) {
+                display: none;
+            }
+
+            :last-child {
+                transform: translate(0, -12.5px) rotate(-45deg);
+                transform-origin: center center;
+                // width: 40px;
+            }
+        }
+    }
+
     @media (min-width: 600px) {
         display: none;
     }
