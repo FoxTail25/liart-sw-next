@@ -1,8 +1,8 @@
-import HeaderMenu from '../../ui/headermenu/hedermenu'
-import Sw_menu from '../../ui/sw_menu/sw_menu'
-import H_links from '../h_links/h_links'
-import LogoRGBI from '../h_logo/logo'
-import h from './header.module.scss'
+import Sw_menu from '../sw_menu/sw_menu';
+import H_links from '../h_links/h_links';
+import LogoRGBI from '../h_logo/logo';
+import HeaderMenu from '../headermenu/hedermenu';
+import h from './header.module.scss';
 
 export default function Header() {
 
