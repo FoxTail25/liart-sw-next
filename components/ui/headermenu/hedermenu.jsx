@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import MenuItem from '../menuitem/menu_item'
-import h from './headrmenu.module.scss'
+import hm from './headrmenu.module.scss'
 
 export default function HeaderMenu() {
 
@@ -44,10 +44,10 @@ export default function HeaderMenu() {
 
     return (
         <>
-            <nav className={h.desktop_menu}>
+            <nav className={hm.desktop_menu}>
                 {menuItem}
             </nav>
-            <div className={h.mobil_menu} onClick={() => setMobilMenuOpen(!mobilMenuOpen)}>
+            <div className={hm.mobil_menu} onClick={() => setMobilMenuOpen(!mobilMenuOpen)}>
                 {mobilMenuOpen && <nav>
                 {menuItem}
                 </nav>}
@@ -56,8 +56,8 @@ export default function HeaderMenu() {
                 <span>МЕНЮ</span>
                 <div className={
                     mobilMenuOpen
-                        ? `${h.burger_menu} ${h.active}`
-                        : h.burger_menu
+                        ? `${hm.burger_menu} ${hm.active}`
+                        : hm.burger_menu
                 }>
 
                     <span className="line1"></span>
