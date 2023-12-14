@@ -79,5 +79,18 @@ const themeArr = [
       
     }
   ]
+  
+  const themeImageArr = [
+    {
+      name: 'background-image',
+      property: 'url("/header/sw_menu/img_off.svg")',
+      description: "скрыть изображения",
+    },
+    {
+      name: 'background-image',
+      property: 'url("/header/sw_menu/img_on.svg")',
+      description: "включить изображения",
+    }
+  ]
 
   export {themeArr, themeFontSizeArr, themeLetterSpasingArr};

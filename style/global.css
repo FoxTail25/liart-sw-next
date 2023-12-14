@@ -30,7 +30,12 @@ html {
     --icon-vk-color: #fff;
     --icon-rutube-bg: #000;
 
+    --image-vision: 1;
+
+    
+
 }
+
 
 html[data-theme="white"] {
     --font-color1:black;
@@ -135,6 +140,9 @@ html[data-theme="green"] {
     --icon-rutube-bg:rgb(169, 228, 77);
 }
 
+html[data-image="off"] {
+    --image-vision: 0;
+}
 
 html[data-font_size="18px"] {
     --font-size: 18px;
@@ -175,6 +183,7 @@ html, body {
     --transition-letter-spasing-time: .1s;
 }
 
+
 body {
     background: var(--background-html);
     color: var(--font-color2);
@@ -187,6 +196,12 @@ body {
 
     display: none;
 }
+
+img {
+    transition: .2s;
+    opacity: var(--image-vision);
+}
+
 .max_width {
     max-width: var(--maxwidth);
     margin: 0 auto;

@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <>
             <div className={h.container}>
-                <Sw_menu />
+                
                 <header className={`${h.header} max_width`}>
 
                     <div className={h.logoRGBI}>

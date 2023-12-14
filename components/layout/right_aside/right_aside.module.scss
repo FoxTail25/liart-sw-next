@@ -1,4 +1,28 @@
 .right_aside {
     max-width: var(--main_aside_width);
     padding: 5px;
+
+    text-align: left;
+    
+    a {
+        color: var(--font-color2);
+        h2 {
+            margin-top: 0;
+            font-size: var(--font-size);
+            font-weight: normal;
+        }
+    }
+    
+    ul {
+        li {
+            a{
+                font: var(--font);
+            }
+        }
+    }
+
+    img {
+        width: auto;
+        height: auto;
+    }
 }
