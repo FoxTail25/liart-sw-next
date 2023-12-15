@@ -2,6 +2,7 @@ import Header from "./layout/header/header";
 import l from './layout.module.scss';
 import Right_aside from "./layout/right_aside/right_aside";
 import Sw_menu from "./layout/sw_menu/sw_menu";
+import Footer from "./layout/footer/footer";
 
 
 export default function Layout({ children }) {
@@ -24,7 +25,9 @@ export default function Layout({ children }) {
                 </aside>
 
             </div>
-            <footer>footer</footer>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     )
 }
