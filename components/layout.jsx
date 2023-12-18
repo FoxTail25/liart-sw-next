@@ -3,6 +3,7 @@ import l from './layout.module.scss';
 import Right_aside from "./layout/aside_right/right_aside";
 import Sw_menu from "./layout/sw_menu/sw_menu";
 import Footer from "./layout/footer/footer";
+import Aside_left from "./layout/aside_left/aside_left";
 
 
 export default function Layout({ children }) {
@@ -14,7 +15,8 @@ export default function Layout({ children }) {
 
             <div className={`${l.main} max_width flex_row`}>
                 <aside className={l.left}>
-                    left aside
+                    {/* left aside */}
+                    <Aside_left/>
 
                 </aside>
                 <main>

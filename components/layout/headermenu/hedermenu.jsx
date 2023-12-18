@@ -2,54 +2,33 @@
 import { useState } from 'react'
 import MenuItem from '../menuitem/menu_item'
 import hm from './headrmenu.module.scss'
+import Sw_logo from '../sw_logo/sw_logo'
+import header_menu from '../../../data/header_menu'
 
 export default function HeaderMenu() {
 
     let [mobilMenuOpen, setMobilMenuOpen] = useState(false)
 
-    let menu = [
-        {
-            nameHref: ["НОВОСТИ", '/'],
-            subMenu: null
-        },
-        {
-            nameHref: ["О БИБЛИОТЕКЕ", '/about'],
-            subMenu: null
-        },
-        {
-            nameHref: ["УСЛУГИ", '/service'],
-            subMenu: null
-        },
-        {
-            nameHref: ["ФОНДЫ", '/fonds'],
-            subMenu: null
-        },
-        {
-            nameHref: ["КАТАЛОГИ", '/catalog'],
-            subMenu: null
-        },
-        {
-            nameHref: ["ЭЛЕКТРОННЫЕ РЕСУРСЫ", '/elres'],
-            subMenu: null
-        },
-        {
-            nameHref: ["КОНТАКТЫ", '/contact'],
-            subMenu: 1
-        },
-    ]
 
-    let menuItem = menu.map((el, ind) => <MenuItem key={ind}{...el} />)
+
+    let header_menuItem = header_menu.map((el, ind) => <MenuItem key={ind}{...el} />)
 
 
 
     return (
-        <>
+        <div className={hm.header_menu}>
+
             <nav className={hm.desktop_menu}>
-                {menuItem}
+                {header_menuItem}
             </nav>
+
+            <div className={hm.sw_menu}>
+                <Sw_logo/>
+            </div>
+
             <div className={hm.mobil_menu} onClick={() => setMobilMenuOpen(!mobilMenuOpen)}>
                 {mobilMenuOpen && <nav>
-                {menuItem}
+                {header_menuItem}
                 </nav>}
                
 
@@ -66,6 +45,6 @@ export default function HeaderMenu() {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
