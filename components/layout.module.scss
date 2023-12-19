@@ -26,6 +26,28 @@
             width: calc(var(--maxwidth) - var(--main_aside_width) * 2);
             
         }
+        @media (max-width: 1000px) {
+            .right {
+                display: none;
+            }
+            main {
+
+                width: calc(100vw - var(--main_aside_width) );
+                
+            }
+
+        }
+        @media (max-width: 600px) {
+            .left {
+                display: none;
+            }
+            main {
+
+                width: 100vw;
+                
+            }
+
+        }
     }
     
     footer {
