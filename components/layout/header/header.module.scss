@@ -8,7 +8,7 @@
     color: var(--font-header-color);
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    
     
     .logoRGBI {
         width: var(--header_aside_width) ;
@@ -48,9 +48,9 @@
         padding-top: 10px;
     }
     
-    @media (max-width: 1024px) {
+    @media (max-width: 1020px) {
         
-        
+        flex-wrap: wrap;
         justify-content: center;
         // background-position: top;
         
