@@ -3,6 +3,7 @@ import H_links from '../h_links/h_links';
 import LogoRGBI from '../h_logo/logo';
 import HeaderMenu from '../headermenu/hedermenu';
 import h from './header.module.scss';
+import Image from 'next/image';
 
 export default function Header() {
 
@@ -10,7 +11,7 @@ export default function Header() {
     return (
         <>
             <div className={h.container}>
-                
+
                 <header className={`${h.header} max_width`}>
 
                     <div className={h.logoRGBI}>
@@ -18,9 +19,11 @@ export default function Header() {
                     </div>
 
                     <div className={h.content}>
-                        <h5>Федеральное государственное бюджетное учреждение культуры</h5>
-                        <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br />БИБЛИОТЕКА ИСКУССТВ</h2>
-                        <p>"Искусство помогать искусству"</p>
+
+                            <h5>Федеральное государственное бюджетное учреждение культуры</h5>
+                            <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br />БИБЛИОТЕКА ИСКУССТВ</h2>
+                            <p>"Искусство помогать искусству"</p>
+                       
                     </div>
 
                     <div className={h.header_links}>
@@ -29,7 +32,7 @@ export default function Header() {
 
                 </header>
             </div>
-            <HeaderMenu/>
+            <HeaderMenu />
         </>
     )
 }

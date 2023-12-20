@@ -18,6 +18,7 @@
         width: calc(var(--maxwidth) - var(--header_aside_width)*2);
         transition: background var(--transition-bg-time);
         background: var(--background-header-image);
+        position: relative;
         background-size: contain;
 
         h5 {
@@ -61,9 +62,11 @@
         
         .content {
             width: 100%;
+            // width: 460px;
             text-align: center;
             padding-left: 0;
             order: 0;
+         
         }
         
         .header_links {
