@@ -34,10 +34,15 @@
 
         margin: 10px 0;
         display: flex;
-        // justify-content: flex-;
         position: relative;
         :not(nav) {
             margin-left: 7px;
+        }
+
+        span {
+            font-size: 28px;
+            line-height: 30px;
+            // margin-right: 10px;
         }
         
         .burger_menu {
@@ -79,6 +84,26 @@
             }
         }
 
+        nav {
+            position: absolute;
+            border: 1px solid var(--font-color2);
+            border-radius: 10px;
+            z-index: 3;
+            top: 30px;
+            background-color: var(--background-aside-left);
+            width: 90vw;
+            a {
+                padding: 10px 0;
+                height: auto;
+                span {
+                    line-height: auto;
+                }
+            }
+            height: 60vh;
+            overflow: auto;
+        }
+
+
     }
 
     .sw_menu {
@@ -109,17 +134,28 @@
             position: absolute;
             border: 1px solid var(--font-color2);
             border-radius: 10px;
-            background-image: var(--background-aside-left);
+            // background-image: var(--background-aside-left);
             z-index: 3;
             top: 30px;
+            background-color: var(--background-aside-left);
 
+
+            // a {
+            //     padding: 0 20px;
+
+            //     span {
+            //         max-width: 260px;
+
+            //     }
+            // }
 
             a {
-                padding: 0 20px;
-
+                margin: 5px 5px;
+                height: auto;
+                padding: 10px 0;
                 span {
-                    max-width: 260px;
-
+                    line-height: auto;
+                    margin-right: 0;
                 }
             }
 

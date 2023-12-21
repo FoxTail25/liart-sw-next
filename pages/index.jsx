@@ -5,9 +5,9 @@ export default function Home() {
 
     return <Layout>
         <Head>
-            <title>Российская государственная библиотека искусств</title>
+            {/* <title>РГБИ</title> */}
         </Head>
-    <p>home</p>
-  
+        <p>home</p>
+
     </Layout>
 }

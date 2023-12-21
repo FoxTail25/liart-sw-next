@@ -162,7 +162,7 @@ _tmr.push({id: "410642", type: "pageView", start: (new Date()).getTime()});
                         Контакты
                     </a>
                 </li>
-             
+
 
             </ul>
 
@@ -172,11 +172,11 @@ _tmr.push({id: "410642", type: "pageView", start: (new Date()).getTime()});
             <p>
                 Наши адреса:
                 <br />
-                <strong>
+                
                     <a href="https://liart.ru/ru/pages/index/adress">
-                        =Адреса на картах=
+                        =Адреса на картах= 
                     </a>
-                </strong>
+                
             </p>
 
             <p>Читальные залы:
@@ -199,20 +199,24 @@ _tmr.push({id: "410642", type: "pageView", start: (new Date()).getTime()});
 
             <p>
                 Разработчик сайта:
-                <b><a href="https://obs.ruslan.ru/"> ООО «Открытые библиотечные системы»
-                </a></b>
+                <a href="https://obs.ruslan.ru/">
+                    <b> ООО «Открытые библиотечные системы»</b>
+                </a>
                 , ПО
-                <b><a href="https://obs.ruslan.ru/?product:biblioportal">
-                    «Библиопортал»
-                </a></b>
+                <a href="https://obs.ruslan.ru/?product:biblioportal">
+                    <b> «Библиопортал» </b>
+                </a>
                 . Дизайн сайта: АНО Центр культуры и искусства
-                <b><a href="https://www.mediaartlab.ru/">
-                    «МедиаАртЛаб»
-                </a></b>
+                <a href="https://www.mediaartlab.ru/">
+                    <b> «МедиаАртЛаб» </b>
+                </a>
                 . При использовании материалов прямая ссылка на сайт
-                <b><a href="https://www.liart.ru">
-                    www.liart.ru
-                </a></b>обязательна.
+
+                <a href="https://www.liart.ru">
+                    <b> www.liart.ru </b>
+                </a>
+
+                обязательна.
             </p>
 
         </div>

@@ -4,11 +4,15 @@ import Right_aside from "./layout/aside_right/right_aside";
 import Sw_menu from "./layout/sw_menu/sw_menu";
 import Footer from "./layout/footer/footer";
 import Aside_left from "./layout/aside_left/aside_left";
+import Head from "next/head";
 
 
 export default function Layout({ children }) {
 
-    return (
+    return <>
+        <Head>
+        <link rel="icon" href="/favicon.ico" />
+        </Head>
         <div className={l.layout}>
             <Sw_menu />
             <Header />
@@ -16,7 +20,7 @@ export default function Layout({ children }) {
             <div className={`${l.main} max_width flex_row`}>
                 <aside className={l.left}>
                     {/* left aside */}
-                    <Aside_left/>
+                    <Aside_left />
 
                 </aside>
                 <main>
@@ -28,8 +32,8 @@ export default function Layout({ children }) {
 
             </div>
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
         </div>
-    )
+    </>
 }
