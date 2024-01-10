@@ -1,34 +1,81 @@
 
 .menu_item {
 
-    text-decoration: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    color: var(--font-color2);
-    transition: var(--transition-color-time);
-    border-radius: 5px;
 
-    span {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: relative;
+    
+    transition: var(--transition-color-time);
+    
+    .drop_btn {
+        flex-grow: 1;
+        border-radius: 5px 5px 0 0;
+        color: var(--font-color2);
         font-weight: 600;
+        height: 60px;
         padding: 0 10px;
         text-align: center;
-
+        text-decoration: none;
+        
+        display: inherit;
+        align-items: center;
+        
+        &.active, &:hover {
+            // transition: var(--transition-color-time);
+            background: var(--header-menu-background);
+            color: var(--font-color-header-hover);
+        }
     }
-
     
     // &::after, &::before {
-    //     content: '|';
-    // }
-  
-    
-    
-    &.active, &:hover {
-        transition: var(--transition-color-time);
-        background: var(--header-menu-background);
-        color: var(--font-color-header-hover);
+        //     content: '|';
+        // }
+        
+        .drop_content {
+            position: absolute;
+            display: none;
+            top: 60px;
+            left: 0;
+            background: var(--background-main);
+            
+            justify-content: flex-start;
+            padding: 10px;
+            box-sizing: border-box;
+            div {
+                
+                border-bottom: 1px solid var(--header-menu-background);
+                a {
+                    text-decoration: none;
+                    color: var(--font-color2);
+                    
+                    &.active, &:hover {
+                        text-decoration: underline;
+                        transition: var(--transition-color-time);
+                        background: var(--header-menu-background);
+                        color: var(--font-color-header-hover);
+                    }
+                }
+            }
+            border: 4px solid var(--header-menu-background);
+            border-radius: 0 0 5px 5px;
+            z-index: 2;
+        }
+        
+        
+        &:hover .drop_content {
+            display: block;
+            flex-direction: column;
+            width: max-content;
+            // height: max-content;
+        }
+        &:hover .drop_btn {
+            background: var(--header-menu-background);
+            color: var(--font-color-header-hover);
+        }
+        
+        
     }
-
-
-}

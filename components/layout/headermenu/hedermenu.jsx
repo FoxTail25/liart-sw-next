@@ -13,7 +13,9 @@ export default function HeaderMenu() {
 
 
 
-    let header_menuItem = header_menu.map((el, ind) => <MenuItem key={ind}{...el} />)
+    let header_menuItem = header_menu.map((el, ind) => <MenuItem key={ind}{...{...el, desktop:true}} />)
+    let header_mobilMenuItem = header_menu.map((el, ind) => <MenuItem key={ind} {...el} />)
+
     let aside_left_menuItem = aside_left_menu.map((el, ind) => <MenuItem key={ind}{...el} />)
 
 
@@ -58,7 +60,7 @@ export default function HeaderMenu() {
                 {
                     mobilMenuOpen &&
                     <nav>
-                        {header_menuItem}
+                        {header_mobilMenuItem}
                     </nav>
                 }
 

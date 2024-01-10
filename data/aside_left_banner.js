@@ -59,6 +59,20 @@ const aside_left_banner = [
     },
     {
         textUp: '',
+        href: "https://1cult.ru/",
+        srcImg: "/aside/left/banners_img/cult1.png",
+        alt: 'banner',
+        textdown: '',
+    },
+    {
+        textUp: '',
+        href: "https://www.consultant.ru/?ysclid=lqm1iouj9m297581674",
+        srcImg: "/aside/left/banners_img/consult.png",
+        alt: 'banner',
+        textdown: '',
+    },
+    {
+        textUp: '',
         href: "https://объясняем.рф",
         srcImg: "/aside/left/banners_img/obyasn1.jpg",
         alt: 'banner',
