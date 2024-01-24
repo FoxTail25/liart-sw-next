@@ -3,15 +3,15 @@ import mi from './menu_item.module.scss';
 
 export default function MenuItem({ nameHref, subMenu, ...props }) {
     let [name, href] = nameHref
-    
-    const submenuArr =[];
 
-    console.log(props)
+    const submenuArr = [];
+
+    // console.log(props)
 
     if (subMenu) {
 
         subMenu.map((e) => {
-           submenuArr.push(<div key={e.name} ><Link href={e.href}>{e.name}</Link></div>)
+            submenuArr.push(<div key={e.name} ><Link href={e.href}>{e.name}</Link></div>)
         })
     }
 
@@ -23,9 +23,9 @@ export default function MenuItem({ nameHref, subMenu, ...props }) {
             {(subMenu && props.desktop) &&
 
                 <div className={mi.drop_content}>
-                    
+
                     {submenuArr}
-                    
+
 
                 </div>
             }
