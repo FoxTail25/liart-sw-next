@@ -5,7 +5,7 @@ export default function Home() {
 
     return <>
         <Head>
-            {/* <title>РГБИ</title> */}
+            <title>Новости РГБИ</title>
         </Head>
         <p>home</p>
 

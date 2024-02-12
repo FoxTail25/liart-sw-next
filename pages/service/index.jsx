@@ -1,9 +1,14 @@
 // import Layout from "../../components/layout"
 
+import Head from "next/head";
+
 export default function Service() {
 
 
     return <>
-    <p>service</p>
+        <Head>
+            <title>Услуги</title>
+        </Head>
+        <p>service</p>
     </>
 }

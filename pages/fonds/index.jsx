@@ -1,9 +1,14 @@
 // import Layout from "../../components/layout"
 
+import Head from "next/head";
+
 export default function Fonds() {
 
 
     return <>
-    <p>fonds</p>
+        <Head>
+            <title>Фонды</title>
+        </Head>
+        <p>fonds</p>
     </>
 }

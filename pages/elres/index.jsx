@@ -1,9 +1,14 @@
 // import Layout from "../../components/layout"
 
+import Head from "next/head";
+
 export default function Elres() {
 
 
     return <>
-    <p>elres</p>
+        <Head>
+            <title>Электронные ресурсы</title>
+        </Head>
+        <p>elres</p>
     </>
 }
