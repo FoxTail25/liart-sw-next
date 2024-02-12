@@ -1,9 +1,9 @@
-import Layout from "../../components/layout"
+// import Layout from "../../components/layout"
 
 export default function Fonds() {
 
 
-    return <Layout>
+    return <>
     <p>fonds</p>
-    </Layout>
+    </>
 }
