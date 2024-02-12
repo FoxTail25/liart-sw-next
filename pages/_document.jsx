@@ -21,6 +21,7 @@ export default function Document() {
         <meta name="DC.Language" content="ru" />
         <meta name="DC.Coverage" content="Москва" />
         <meta name="DC.Rights" content="(c) РГБИ Москва 1996-2024" />
+        <link rel="preconnect" href="https://top-fwz1.mail.ru"></link>
       </Head>
       <body>
         <Main />

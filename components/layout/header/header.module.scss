@@ -18,6 +18,7 @@
         width: calc(var(--maxwidth) - var(--header_aside_width)*2);
         transition: background var(--transition-bg-time);
         background: var(--background-header-image);
+        // max-width: 554px;
         position: relative;
         background-size: contain;
 

@@ -173,9 +173,9 @@ _tmr.push({id: "410642", type: "pageView", start: (new Date()).getTime()});
                 Наши адреса:
                 <br />
                 
-                    {/* <a href="#"> */}
-                    <a href="https://liart.ru/ru/pages/index/adress">
-                        =Адреса на картах= 
+                    {/* <a href="https://liart.ru/ru/pages/index/adress"> */}
+                    <a href="http://localhost:3000/service">
+                        Адреса на картах
                     </a>
                 
             </p>
