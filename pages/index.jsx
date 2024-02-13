@@ -6,7 +6,7 @@ export async function getServerSideProps() {
     let repo = 5
     // Fetch data from external API
     let res = await fetch('http://localhost:3000/api/hi').then(res => res.json())
-    console.log(res)
+    // console.log(res)
     // Pass data to the page via props
     return { props: { repo, res } }
 }
@@ -15,7 +15,6 @@ export async function getServerSideProps() {
 
 export default function Home({ repo, res }) {
 
-    console.log(res)
 
     return <>
         <Head>
