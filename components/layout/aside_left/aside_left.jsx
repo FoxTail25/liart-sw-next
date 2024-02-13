@@ -6,19 +6,22 @@ import al from './aside_left.module.scss';
 
 export default function Aside_left() {
 
-    let aside_menu = aside_left_menu.map(e => <Aside_menu_item key={e.nameHref[0]} {...e}/>)
+    let aside_menu = aside_left_menu.map(e => <Aside_menu_item key={e.nameHref[0]} {...e} />)
 
 
-    
-    let banners = aside_left_banner.map(e => <BannerLeftAside key={e.href} {...e}/>)
+
+    let banners = aside_left_banner.map(e => <BannerLeftAside key={e.href} {...e} />)
     // console.log(banners)
 
     return <div className={al.aside_left}>
-    <nav className={al.aside_nav_menu}>
-        {aside_menu}
-    </nav>
+        <nav className={al.aside_nav_menu}>
+            {aside_menu}
+        </nav>
 
-    {banners}
+        <a className={al.month} href='http://official.liart.ru/calendars/month.pdf' target='_blank'>Афиша на месяц</a>
+
+        {banners}
+
 
     </div>
 }

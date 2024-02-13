@@ -7,19 +7,19 @@ import myContext from '../store/myContext'
 import localTheme from '../utils/themeToLocalstor'
 import Layout from "../components/layout"
 
-export default function App({ Component, pagePrors }) {
+export default function App({ Component, pageProps }) {
 
-    useEffect(()=> {
+    useEffect(() => {
 
         let sw_switch = localTheme.getTheme('sw_button')
         setSw_menu_visible(sw_switch || false)
-    },[])
+    }, [])
 
     let [sw_menu_vision, setSw_menu_visible] = useState()
 
     let context = useContext(myContext)
 
-    const setSw_menu_vision =(switcher) => {
+    const setSw_menu_vision = (switcher) => {
         setSw_menu_visible(switcher)
         localTheme.setTheme(switcher, 'sw_button')
     }
@@ -27,21 +27,21 @@ export default function App({ Component, pagePrors }) {
 
 
     const contextSWandLANG = {
-        lang : 'ru',
+        lang: 'ru',
         sw_menu: {
             sw_menu_vision,
             setSw_menu_vision
         }
     }
 
-    return<>
+    return <>
         <Head >
-        <title>Российская государственная библиотека искусств</title>
+            <title>Российская государственная библиотека искусств</title>
         </Head>
         <myContext.Provider value={contextSWandLANG}>
-        <Layout>
-            <Component {...pagePrors} />
-        </Layout>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </myContext.Provider>
     </>
 

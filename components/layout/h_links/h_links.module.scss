@@ -39,19 +39,21 @@
         justify-content: space-around;
         align-items: center;
 
-      
-        a{
+
+        a {
             color: transparent;
             text-decoration: none;
             position: relative;
             height: 32px;
-            div{
+
+            div {
                 position: absolute;
             }
         }
-        
+
         .vk {
             display: inline;
+
             div {
                 width: 32px;
                 height: 32px;
@@ -78,8 +80,9 @@
         .wifi {
             div {
                 svg {
-                    fill-rule:evenodd;
+                    fill-rule: evenodd;
                 }
+
                 width: 40px;
                 // height: 40px;
                 // background: url('/header/links/wifi.png') center no-repeat;
@@ -90,18 +93,21 @@
 
     .block3 {
 
-        
+
         // justify-content: end;
         a {
             display: block;
             text-align: end;
+            font: var(--font);
             font-size: var(--font-size10);
             color: var(--font-header-color);
             margin-bottom: 7px;
             text-decoration: none;
+
             @media (max-width: 1024px) {
                 text-align: center;
             }
+
             @media (max-width: 800px) {
                 font-size: var(--font-size10m);
             }

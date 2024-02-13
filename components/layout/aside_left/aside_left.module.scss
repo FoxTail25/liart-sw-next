@@ -1,9 +1,18 @@
 .aside_left {
 
-    
+
     .aside_nav_menu {
         padding: 10px;
     }
 
-    
+    .month {
+        display: block;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font: var(--font);
+        font-size: var(--font20);
+        color: var(--font-aside-color);
+    }
+
+
 }

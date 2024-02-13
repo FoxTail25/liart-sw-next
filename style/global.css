@@ -1,3 +1,20 @@
+/* :root {
+
+} */
+
+@font-face {
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/PTSerif-Regular.ttf);
+}
+@font-face {
+    font-family: "Helvetica Neue";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/HelvetNeue.woff);
+}
+
 html {
     --font-color1:black;
     --font-color2:#6b001c;
@@ -187,6 +204,7 @@ html, body {
 
 
 body {
+    font-family: 'PT Serif', serif;
     background: var(--background-html);
     color: var(--font-color2);
 
