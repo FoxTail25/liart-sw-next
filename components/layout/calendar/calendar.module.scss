@@ -1,0 +1,25 @@
+.calend_block {
+	margin: 30px 0;
+	width: calc(100% - 20px);
+	padding: 0 10px;
+
+	.arrow_left,
+	.arrow_right {
+		width: 10px;
+	}
+
+	.calendar_contain {
+		// padding: 0 10px;
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+
+			td {
+				border: 1px solid var(--font-aside-color);
+			}
+
+		}
+	}
+}
