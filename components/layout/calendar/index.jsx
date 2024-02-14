@@ -79,8 +79,10 @@ export default function Calendar() {
 	}, [])
 
 	return <div className={cb.calend_block}>
+
 		<div className={cb.arrow_left} />
 		<div ref={calend_block} className={cb.calendar_contain} />
 		<div className={cb.arrow_right} />
+
 	</div>
 }
