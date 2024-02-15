@@ -1,22 +1,27 @@
 .calend_block {
 	margin: 30px 0;
-	width: calc(100% - 20px);
-	padding: 0 10px;
+	// width: calc(100% - 20px);
+	width: 100%;
+	// padding: 0 10px;
 	display: inline-block;
+	// display: flex;
 
 	.arrow_left,
 	.arrow_right {
-		width: 10px;
-		height: 100%;
+		width: 20px;
+		height: 100px;
 		background-color: red;
+		display: inherit;
 	}
-
+	
 	.calendar_contain {
+		display: inherit;
 		// padding: 0 10px;
-
+		width: calc(100% - 40px);
+		
 		table {
-			width: calc(100% - 20px);
 			border-collapse: collapse;
+			width: 100%;
 
 
 			td {
