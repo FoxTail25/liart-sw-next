@@ -1,33 +1,56 @@
 .calend_block {
-	margin: 30px 0;
+	margin    : 30px 0;
 	// width: calc(100% - 20px);
-	width: 100%;
+	width     : 100%;
 	// padding: 0 10px;
 	// display: inline-block;
-	display: flex;
+	display   : flex;
 
 	.arrow_left,
 	.arrow_right {
-		width: 20px;
-		height: 100px;
-		background-color: red;
-		display: inherit;
-		align-self: center;
+		width           : 20px;
+		height          : 100px;
+		background-color: transparent;
+		display         : inherit;
+		align-self      : flex-start;
+		cursor          : pointer;
+		border: none;
+		// border-radius: 100% 0 0 0;
 	}
-	
+
+	.arrow_left {
+		padding      : 0;
+		width        : 0;
+		height       : 0;
+		border-top   : 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		border-right : 20px solid var(--font-aside-color);
+	}
+	.arrow_right {
+		padding      : 0;
+		width        : 0;
+		height       : 0;
+		border-top   : 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		border-left : 20px solid var(--font-aside-color);
+	}
+
 	.calendar_contain {
-		overflow: auto;
-		display: inherit;
+		overflow  : auto;
+		display   : inherit;
 		// padding: 0 10px;
-		width: calc(100% - 40px);
-		
+		width     : calc(100% - 40px);
+
 		table {
 			border-collapse: collapse;
-			width: 100%;
+			width          : 100%;
 
 
-			td {
+			td, caption {
 				border: 1px solid var(--font-aside-color);
+			}
+			caption {
+				border-bottom: none;
 			}
 
 		}

@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cb from './calendar.module.scss';
 
 export default function Calendar() {
+
+	let [calendarMonth, setCalendarMonth] = useState(new Date())
 
 	let arrDate = [];
 	let g_date;
@@ -12,7 +14,7 @@ export default function Calendar() {
 
 		let calendar = document.createElement('table');
 		const tableName = document.createElement('caption')
-		tableName.textContent = `Календарь на ${g_date.toLocaleString('ru-Ru', { month: 'long' })}`
+		tableName.innerHTML = `Календарь на ${g_date.toLocaleString('ru-Ru', { month: 'long' })} <br/> ${g_date.getFullYear()} года`
 		calendar.appendChild(tableName)
 
 		let th = document.createElement('thead');
@@ -41,6 +43,7 @@ export default function Calendar() {
 	}
 
 	function getArrDate(date) {
+		// arrDate =[]
 		g_date = date
 		let thisMonth = date.getMonth();
 		let thisYear = date.getFullYear();
@@ -50,16 +53,15 @@ export default function Calendar() {
 		}
 		let lastDateThsMonth = new Date(thisYear, thisMonth + 1, 0).getDate();
 		console.log(lastDateThsMonth);
-
+		// let nextMonthDate = 1;
 		for (let index = 0; index < 35; index++) {
 			if (index + 1 < firsWeekDayThisMonth) {
 				// let date = new Date(thisYear, thisMonth, (1 - firsWeekDayThisMonth + index + 1)).getDate();
-				// arrDate.push(date);
+				// arrDate.push({ date, month: thisMonth - 1 });
 				arrDate.push('');
 			} else if (index > lastDateThsMonth + firsWeekDayThisMonth - 2) {
-				// let date = new Date(thisYear, thisMonth, (35 - (35 - index - lastDateThsMonth) + thisMonth - 1)).getDate()
-				// let date = new Date(thisYear, thisMonth, index).getDate() - 2
-				// arrDate.push(date);
+				
+				// arrDate.push({ date:nextMonthDate++, month: thisMonth + 1 });
 				arrDate.push('')
 			} else {
 				arrDate.push({ date: index + 1 - firsWeekDayThisMonth + 1, month: thisMonth })
@@ -73,16 +75,31 @@ export default function Calendar() {
 	let calend_block = useRef();
 
 	useEffect(() => {
-		getArrDate(new Date(2024, 1, 1))
+		getArrDate(calendarMonth)
 		calend_block.current.innerHTML = '';
 		calend_block.current.appendChild(getCalendarTable());
-	}, [])
+	}, [calendarMonth])
+
+	function minusMonth() {
+		console.log('--month')
+		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()-1, calendarMonth.getDate())
+		console.log(newDate)
+		setCalendarMonth(newDate)
+	}
+	function plusMonth() {
+		console.log('++month')
+		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()+1, calendarMonth.getDate())
+		console.log(newDate)
+		setCalendarMonth(newDate)
+	}
 
 	return <div className={cb.calend_block}>
 
-		<button className={cb.arrow_left} >l</button>
+		<button className={cb.arrow_left} onClick={minusMonth} title='предыдущий месяц'/>
+
 		<div ref={calend_block} className={cb.calendar_contain} />
-		<button className={cb.arrow_right} >r</button>
+
+		<button className={cb.arrow_right} onClick={plusMonth} title='следующий месяц'/>
 
 	</div>
 }
