@@ -80,9 +80,9 @@ export default function Calendar() {
 
 	return <div className={cb.calend_block}>
 
-		<div className={cb.arrow_left} />
+		<button className={cb.arrow_left} >l</button>
 		<div ref={calend_block} className={cb.calendar_contain} />
-		<div className={cb.arrow_right} />
+		<button className={cb.arrow_right} >r</button>
 
 	</div>
 }

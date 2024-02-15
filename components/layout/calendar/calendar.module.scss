@@ -3,8 +3,8 @@
 	// width: calc(100% - 20px);
 	width: 100%;
 	// padding: 0 10px;
-	display: inline-block;
-	// display: flex;
+	// display: inline-block;
+	display: flex;
 
 	.arrow_left,
 	.arrow_right {
@@ -12,9 +12,11 @@
 		height: 100px;
 		background-color: red;
 		display: inherit;
+		align-self: center;
 	}
 	
 	.calendar_contain {
+		overflow: auto;
 		display: inherit;
 		// padding: 0 10px;
 		width: calc(100% - 40px);
