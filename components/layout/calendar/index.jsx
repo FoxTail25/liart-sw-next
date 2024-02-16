@@ -52,7 +52,7 @@ export default function Calendar() {
 			firsWeekDayThisMonth = 7;
 		}
 		let lastDateThsMonth = new Date(thisYear, thisMonth + 1, 0).getDate();
-		console.log(lastDateThsMonth);
+		// console.log(lastDateThsMonth);
 		// let nextMonthDate = 1;
 		for (let index = 0; index < 35; index++) {
 			if (index + 1 < firsWeekDayThisMonth) {
@@ -60,7 +60,7 @@ export default function Calendar() {
 				// arrDate.push({ date, month: thisMonth - 1 });
 				arrDate.push('');
 			} else if (index > lastDateThsMonth + firsWeekDayThisMonth - 2) {
-				
+
 				// arrDate.push({ date:nextMonthDate++, month: thisMonth + 1 });
 				arrDate.push('')
 			} else {
@@ -68,7 +68,7 @@ export default function Calendar() {
 			}
 		}
 
-		console.log(arrDate)
+		// console.log(arrDate)
 
 	}
 
@@ -81,25 +81,25 @@ export default function Calendar() {
 	}, [calendarMonth])
 
 	function minusMonth() {
-		console.log('--month')
-		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()-1, calendarMonth.getDate())
-		console.log(newDate)
+		// console.log('--month')
+		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, calendarMonth.getDate())
+		// console.log(newDate)
 		setCalendarMonth(newDate)
 	}
 	function plusMonth() {
-		console.log('++month')
-		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()+1, calendarMonth.getDate())
-		console.log(newDate)
+		// console.log('++month')
+		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, calendarMonth.getDate())
+		// console.log(newDate)
 		setCalendarMonth(newDate)
 	}
 
 	return <div className={cb.calend_block}>
 
-		<button className={cb.arrow_left} onClick={minusMonth} title='предыдущий месяц'/>
+		<button className={cb.arrow_left} onClick={minusMonth} title='предыдущий месяц'>&lt;&lt;</button>
 
 		<div ref={calend_block} className={cb.calendar_contain} />
 
-		<button className={cb.arrow_right} onClick={plusMonth} title='следующий месяц'/>
+		<button className={cb.arrow_right} onClick={plusMonth} title='следующий месяц'>&gt;&gt;</button>
 
 	</div>
 }
