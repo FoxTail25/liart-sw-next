@@ -1,7 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import cb from './calendar.module.scss';
+// import axios from 'axios';
 
-export default function Calendar() {
+
+// export async function getServerSideProps() {
+// 	let repCalend = 5
+// 	// Fetch data from external API
+// 	let reCalend = await fetch('http://localhost:3000/api/hi').then(res => res.json())
+// 	console.log('calend_server', reCalend)
+// 	// Pass data to the page via props
+// 	return { props: { repCalend, reCalend } }
+// }
+
+
+export default function Calendar({ repCalend, reCalend }) {
 
 	let [calendarMonth, setCalendarMonth] = useState(new Date())
 
@@ -52,7 +64,6 @@ export default function Calendar() {
 			firsWeekDayThisMonth = 7;
 		}
 		let lastDateThsMonth = new Date(thisYear, thisMonth + 1, 0).getDate();
-		// console.log(lastDateThsMonth);
 		// let nextMonthDate = 1;
 		for (let index = 0; index < 35; index++) {
 			if (index + 1 < firsWeekDayThisMonth) {
@@ -68,9 +79,9 @@ export default function Calendar() {
 			}
 		}
 
-		// console.log(arrDate)
-
 	}
+
+
 
 	let calend_block = useRef();
 
@@ -78,28 +89,31 @@ export default function Calendar() {
 		getArrDate(calendarMonth)
 		calend_block.current.innerHTML = '';
 		calend_block.current.appendChild(getCalendarTable());
+		hi_22()
 	}, [calendarMonth])
 
 	function minusMonth() {
-		// console.log('--month')
 		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, calendarMonth.getDate())
-		// console.log(newDate)
 		setCalendarMonth(newDate)
 	}
 	function plusMonth() {
-		// console.log('++month')
 		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, calendarMonth.getDate())
-		// console.log(newDate)
 		setCalendarMonth(newDate)
 	}
 
-	return <div className={cb.calend_block}>
+	async function hi_22() {
+		let res = await fetch('http://localhost:3000/api/hical').then(res => res.json())
+		console.log(res)
+	}
 
-		<button className={cb.arrow_left} onClick={minusMonth} title='предыдущий месяц'>&lt;&lt;</button>
+	return <div className={cb.calend_block}>
+		{/* {console.log('repo res', repo, res)} */}
+
+		<button className={cb.arrow_left} onClick={minusMonth} title={`месяц ${new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1).toLocaleString('ru-RU', { month: "long" })}`}>&lt;</button>
 
 		<div ref={calend_block} className={cb.calendar_contain} />
 
-		<button className={cb.arrow_right} onClick={plusMonth} title='следующий месяц'>&gt;&gt;</button>
+		<button className={cb.arrow_right} onClick={plusMonth} title={`месяц ${new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1).toLocaleString('ru-RU', { month: "long" })}`}>&gt;</button>
 
 	</div>
 }
