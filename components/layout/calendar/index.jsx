@@ -17,8 +17,12 @@ export default function Calendar() {
 
 	let [calendarMonth, setCalendarMonth] = useState(new Date())
 
+
 	let arrDate = [];
 	let g_date;
+
+	let calendarHTML;
+	let paintedCalendarMonth;
 
 	function getCalendarTable() {
 
@@ -26,7 +30,9 @@ export default function Calendar() {
 
 		let calendar = document.createElement('table');
 		const tableName = document.createElement('caption')
-		tableName.innerHTML = `Календарь на ${g_date.toLocaleString('ru-Ru', { month: 'long' })} <br/> ${g_date.getFullYear()} года`
+		tableName.innerHTML = `Календарь на ${g_date.toLocaleString('ru-Ru', { month: 'long' })} <br/> ${g_date.getFullYear()} года`;
+		tableName.dataset.month = g_date.getMonth()
+		paintedCalendarMonth = g_date.getMonth()
 		calendar.appendChild(tableName)
 
 		let th = document.createElement('thead');
@@ -51,7 +57,7 @@ export default function Calendar() {
 		}
 		calendar.appendChild(tb)
 
-		return calendar
+		return calendarHTML = calendar
 	}
 
 	function getArrDate(date) {
@@ -88,22 +94,21 @@ export default function Calendar() {
 	useEffect(() => {
 		getArrDate(calendarMonth)
 		calend_block.current.innerHTML = '';
-		calend_block.current.appendChild(getCalendarTable());
+		getCalendarTable()
+		calend_block.current.appendChild(calendarHTML);
 		getEvent()
 	}, [calendarMonth])
 
-	function minusMonth() {
-		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, calendarMonth.getDate())
-		setCalendarMonth(newDate)
-	}
-	function plusMonth() {
-		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, calendarMonth.getDate())
-		setCalendarMonth(newDate)
-	}
+
 
 	async function getEvent() {
 		let res = await fetch('http://localhost:3000/api/calend_event').then(res => res.json())
-		console.log(res)
+		paintEventOnCalendar(res)
+	}
+
+	function cangeMonth(mod) {
+		let newDate = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + mod, calendarMonth.getDate())
+		setCalendarMonth(newDate)
 	}
 
 	function getMonthName(mod) {
@@ -111,14 +116,58 @@ export default function Calendar() {
 		return date.toLocaleString('ru-RU', { month: "long" })
 	}
 
+	function paintEventOnCalendar(arrEvent) {
+		// console.log(arrEvent);
+		// console.log(calendarHTML);
+		let thisMonthEvent = arrEvent.filter(e => e.dateStart.includes(`${(paintedCalendarMonth + 1 + '').padStart(2, '0')}.2024`));
+		// console.log('thisMonthEvent', thisMonthEvent);
+		let ThisMounthDay = calendarHTML.querySelectorAll('tr td')
+		// console.log('ThisMounthDay', ThisMounthDay);
+		let elemHasEventListener = [];
+
+		thisMonthEvent.forEach((elem, index) => {
+			let eventDate = +(elem.dateStart.slice(0, 2));
+			let eventTitle = elem.title;
+			let date = [...ThisMounthDay].filter(date => date.textContent == eventDate)[0]
+
+			if (!elemHasEventListener.includes(date)) {
+
+				date.addEventListener('mouseover', function () {
+					let a = this.style.color;
+					let b = this.style.background;
+					this.style.color = b;
+					this.style.background = a;
+				})
+				date.addEventListener('mouseleave', function () {
+					let a = this.style.color;
+					let b = this.style.background;
+					this.style.color = b;
+					this.style.background = a;
+					// [this.style.color, this.style.background] = [this.style.background, this.style.color]
+				})
+				elemHasEventListener.push(date)
+				// console.log(elemHasEventListener)
+			}
+			setTimeout(() => {
+				date.title += eventTitle + '. '
+				date.style.cursor = 'pointer';
+				date.style.color = 'var(--background-aside-left)';
+				date.style.background = 'var(--font-aside-color)';
+			}, index * 30)
+
+			// console.log(date)
+
+		})
+	}
+
 
 	return <div className={cb.calend_block}>
 
-		<button className={cb.arrow_left} onClick={minusMonth} title={`месяц ${getMonthName(-1)}`}>&lt;</button>
+		<button className={cb.arrow_left} onClick={() => cangeMonth(-1)} title={`месяц ${getMonthName(-1)}`}>&lt;</button>
 
 		<div ref={calend_block} className={cb.calendar_contain} />
 
-		<button className={cb.arrow_right} onClick={plusMonth} title={`месяц ${new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1).toLocaleString('ru-RU', { month: "long" })}`}>&gt;</button>
+		<button className={cb.arrow_right} onClick={() => cangeMonth(1)} title={`месяц ${getMonthName(1)}`}>&gt;</button>
 
 	</div>
 }
