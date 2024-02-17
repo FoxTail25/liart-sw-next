@@ -15,7 +15,7 @@ export async function getServerSideProps() {
 
 export default function Home({ repo, res }) {
 
-    console.log('server!? NO it`s client!', repo, res)
+    // console.log('server!? NO it`s client!', repo, res)
 
 
     return <>
