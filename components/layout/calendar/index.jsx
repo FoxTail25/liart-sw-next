@@ -13,7 +13,7 @@ import cb from './calendar.module.scss';
 // }
 
 
-export default function Calendar({ repCalend, reCalend }) {
+export default function Calendar() {
 
 	let [calendarMonth, setCalendarMonth] = useState(new Date())
 
@@ -106,11 +106,15 @@ export default function Calendar({ repCalend, reCalend }) {
 		console.log(res)
 	}
 
+	function getMonthName(mod) {
+		let date = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + mod)
+		return date.toLocaleString('ru-RU', { month: "long" })
+	}
+
 
 	return <div className={cb.calend_block}>
-		{/* {console.log('repo res', repo, res)} */}
 
-		<button className={cb.arrow_left} onClick={minusMonth} title={`месяц ${new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1).toLocaleString('ru-RU', { month: "long" })}`}>&lt;</button>
+		<button className={cb.arrow_left} onClick={minusMonth} title={`месяц ${getMonthName(-1)}`}>&lt;</button>
 
 		<div ref={calend_block} className={cb.calendar_contain} />
 
