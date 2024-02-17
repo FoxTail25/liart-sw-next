@@ -89,7 +89,7 @@ export default function Calendar({ repCalend, reCalend }) {
 		getArrDate(calendarMonth)
 		calend_block.current.innerHTML = '';
 		calend_block.current.appendChild(getCalendarTable());
-		hi_22()
+		getEvent()
 	}, [calendarMonth])
 
 	function minusMonth() {
@@ -101,10 +101,11 @@ export default function Calendar({ repCalend, reCalend }) {
 		setCalendarMonth(newDate)
 	}
 
-	async function hi_22() {
-		let res = await fetch('http://localhost:3000/api/hical').then(res => res.json())
+	async function getEvent() {
+		let res = await fetch('http://localhost:3000/api/calend_event').then(res => res.json())
 		console.log(res)
 	}
+
 
 	return <div className={cb.calend_block}>
 		{/* {console.log('repo res', repo, res)} */}
