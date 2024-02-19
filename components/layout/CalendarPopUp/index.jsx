@@ -1,10 +1,14 @@
 import popup from './calendarPopUp.module.scss'
 
-export default function CalendarPopUp({ ...data }) {
-	const { setPopUp, ...popUp } = data;
-	console.log(popUp)
+export default function CalendarPopUp({ ...props }) {
+	const { setPopUp, ...data } = props;
+	console.log(data)
 	return <div className={popup.bg}>
-		{/* <div className='' */}
-		<button onClick={() => setPopUp(null)}>close</button>
+		<div className={popup.container}>
+
+			<button onClick={() => setPopUp(null)}>+</button>
+			{data.description}
+
+		</div>
 	</div>
 }
