@@ -1,21 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 import cb from './calendar.module.scss';
-// import axios from 'axios';
+import CalendarPopUp from '../CalendarPopUp';
 
 
 // export async function getServerSideProps() {
 // 	let repCalend = 5
-// 	// Fetch data from external API
-// 	let reCalend = await fetch('http://localhost:3000/api/hi').then(res => res.json())
-// 	console.log('calend_server', reCalend)
-// 	// Pass data to the page via props
-// 	return { props: { repCalend, reCalend } }
+// 	// 	// Fetch data from external API
+// 	// 	// let reCalend = await fetch('http://localhost:3000/api/hi').then(res => res.json())
+// 	// 	// console.log('calend_server', reCalend)
+// 	// 	// Pass data to the page via props
+// 	console.log('server??', repCalend)
+// 	return { props: { repCalend } }
 // }
 
 
-export default function Calendar() {
+export default function Calendar({ repCalend }) {
 
-	let [calendarMonth, setCalendarMonth] = useState(new Date())
+	let [calendarMonth, setCalendarMonth] = useState(new Date());
+
+	let [popUp, setPopUp] = useState(null);
 
 
 	let arrDate = [];
@@ -103,7 +106,10 @@ export default function Calendar() {
 
 	async function getEvent() {
 		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
-		console.log(res)
+		// let res = await fetch('http://192.168.1.39:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
+		// let res = await fetch('http://calendar.liart.ru/api/month_events.php', { mode: 'no-cors' }).then(ev => ev).catch(err => { console.log('error:', err); return err })
+		// console.log(typeof res, res.body)
+
 
 		paintEventOnCalendar(res)
 	}
@@ -152,15 +158,24 @@ export default function Calendar() {
 			}
 			setTimeout(() => {
 				date.title += eventTitle + '. '
+				date.dataset.eventIndex = checkDataSet(date, index);
 				date.style.cursor = 'pointer';
 				date.style.color = 'var(--background-aside-left)';
 				date.style.background = 'var(--font-aside-color)';
+				date.addEventListener('click', function () { setPopUp(thisMonthEvent[index]) })
 			}, index * 30)
 
 			// console.log(date)
 
 		})
 	}
+
+	function checkDataSet(elem, index) {
+		return elem.dataset.eventIndex
+			? [elem.dataset.eventIndex, index]
+			: [index]
+	};
+
 
 
 	return <div className={cb.calend_block}>
@@ -170,6 +185,11 @@ export default function Calendar() {
 		<div ref={calend_block} className={cb.calendar_contain} />
 
 		<button className={cb.arrow_right} onClick={() => cangeMonth(1)} title={`месяц ${getMonthName(1)}`}>&gt;</button>
+
+		{
+
+			popUp && <CalendarPopUp {...{ ...popUp, setPopUp }} />
+		}
 
 	</div>
 }
