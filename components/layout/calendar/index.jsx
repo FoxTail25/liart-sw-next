@@ -102,7 +102,7 @@ export default function Calendar() {
 
 
 	async function getEvent() {
-		let res = await fetch('http://localhost:3000/api/calend_event').then(res => res.json()).catch(err => console.log('ошибка....', err));
+		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 		console.log(res)
 
 		paintEventOnCalendar(res)
