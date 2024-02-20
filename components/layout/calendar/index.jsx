@@ -124,6 +124,8 @@ export default function Calendar({ repCalend }) {
 		return date.toLocaleString('ru-RU', { month: "long" })
 	}
 
+
+
 	function paintEventOnCalendar(arrEvent) {
 		// console.log(arrEvent);
 		// console.log(calendarHTML);
@@ -131,14 +133,15 @@ export default function Calendar({ repCalend }) {
 		// console.log('thisMonthEvent', thisMonthEvent);
 		let ThisMounthDay = calendarHTML.querySelectorAll('tr td')
 		// console.log('ThisMounthDay', ThisMounthDay);
-		let elemHasEventListener = [];
+		let elemHasEventListener_color = [];
+		let elemHasEventListener_func = [];
 
 		thisMonthEvent.forEach((elem, index) => {
 			let eventDate = +(elem.dateStart.slice(0, 2));
 			let eventTitle = elem.title;
 			let date = [...ThisMounthDay].filter(date => date.textContent == eventDate)[0]
 
-			if (!elemHasEventListener.includes(date)) {
+			if (!elemHasEventListener_color.includes(date)) {
 
 				date.addEventListener('mouseover', function () {
 					let a = this.style.color;
@@ -153,7 +156,7 @@ export default function Calendar({ repCalend }) {
 					this.style.background = a;
 					// [this.style.color, this.style.background] = [this.style.background, this.style.color]
 				})
-				elemHasEventListener.push(date)
+				elemHasEventListener_color.push(date)
 				// console.log(elemHasEventListener)
 			}
 			setTimeout(() => {
@@ -162,7 +165,15 @@ export default function Calendar({ repCalend }) {
 				date.style.cursor = 'pointer';
 				date.style.color = 'var(--background-aside-left)';
 				date.style.background = 'var(--font-aside-color)';
-				date.addEventListener('click', function () { setPopUp(thisMonthEvent[index]) })
+
+				if (!elemHasEventListener_func.includes(date)) {
+					date.addEventListener('click', function () {
+						setPopUp({
+							thisMonthEvent, index: (this.dataset.eventIndex).split(',')
+						})
+					});
+					elemHasEventListener_func.push(date)
+				}
 			}, index * 30)
 
 			// console.log(date)
