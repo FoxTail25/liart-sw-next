@@ -13,11 +13,13 @@
 	.container {
 		position: relative;
 		background: var(--background-aside-left);
-		width: 50%;
+
+		width: 70%;
+		height: 55%;
+
 		padding: 20px;
 		padding-top: 40px;
-		// height: 50%;
-		// left: 50%;
+
 		border-radius: 10px;
 
 		button {
@@ -45,6 +47,16 @@
 				color: var(--font-aside-color);
 			}
 
+		}
+
+		.events {
+			box-sizing: border-box;
+			height: calc(100%);
+			overflow: auto;
+			display: flex;
+			// align-items: center;
+			justify-content: center;
+			flex-direction: column;
 		}
 	}
 }

@@ -1,20 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import cb from './calendar.module.scss';
-import CalendarPopUp from '../CalendarPopUp';
+import CalendarPopUp from '../CalendarPopUp/CalendarPopUp';
 
 
-// export async function getServerSideProps() {
-// 	let repCalend = 5
-// 	// 	// Fetch data from external API
-// 	// 	// let reCalend = await fetch('http://localhost:3000/api/hi').then(res => res.json())
-// 	// 	// console.log('calend_server', reCalend)
-// 	// 	// Pass data to the page via props
-// 	console.log('server??', repCalend)
-// 	return { props: { repCalend } }
-// }
 
-
-export default function Calendar({ repCalend }) {
+export default function Calendar() {
 
 	let [calendarMonth, setCalendarMonth] = useState(new Date());
 
@@ -198,7 +188,6 @@ export default function Calendar({ repCalend }) {
 		<button className={cb.arrow_right} onClick={() => cangeMonth(1)} title={`месяц ${getMonthName(1)}`}>&gt;</button>
 
 		{
-
 			popUp && <CalendarPopUp {...{ ...popUp, setPopUp }} />
 		}
 

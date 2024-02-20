@@ -8,18 +8,24 @@ export default function CalendarPopUp({ ...props }) {
 	// console.log(data);
 	const { thisMonthEvent: thisMonthEvents, index: indexArr } = data;
 
-	console.log(thisMonthEvents, indexArr);
+	// console.log(thisMonthEvents, +indexArr[0]);
+	let date = thisMonthEvents[+indexArr[0]].dateStart.slice(0, 10);
 
 	// let [eventData, setEventData] = useState();
+	// let date = thisMonthEvents.dateStart[indexArr[0]]
+
 
 	return <div className={popup.bg}>
 		<div className={popup.container}>
 
 			<button onClick={() => setPopUp(null)}>+</button>
-			{
-				indexArr.map(e => <PopUpEvent key={e} {...thisMonthEvents[e]} />)
-			}
+			<div className={popup.events}>
+				<h2>{date}</h2>
+				{
+					indexArr.map(e => <PopUpEvent key={e} {...thisMonthEvents[e]} />)
+				}
 
+			</div>
 		</div>
 	</div>
 }

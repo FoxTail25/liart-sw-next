@@ -1,7 +1,7 @@
 import aside_left_banner from "../../../data/aside_left_banner";
 import aside_left_menu from "../../../data/aside_left_menu";
 import BannerLeftAside from "../aside_left_banner/aside_left_banner";
-import Calendar from '../calendar';
+import Calendar from '../calendar/Calendar';
 import Aside_menu_item from "../menuitem_aside/menuitem_aside";
 import al from './aside_left.module.scss';
 
