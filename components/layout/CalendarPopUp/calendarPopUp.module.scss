@@ -22,7 +22,7 @@
 
 		border-radius: 10px;
 
-		button {
+		button.close {
 			position: absolute;
 			border-radius: 50%;
 			height: 25px;
@@ -49,14 +49,30 @@
 
 		}
 
-		.events {
-			box-sizing: border-box;
-			height: calc(100%);
-			overflow: auto;
+		.date {
+			position: absolute;
+			left: 50%;
+			top: 5px;
+			margin: 0;
+			transform: translate(-50%);
+			width: 90%;
+		}
+
+		.enventCont {
+
 			display: flex;
-			// align-items: center;
-			justify-content: center;
-			flex-direction: column;
+			height: calc(100%);
+
+			.events {
+				// box-sizing: border-box;
+				height: calc(100%);
+				overflow: auto;
+				// align-items: center;
+				// display: block;
+				// flex-direction: column;
+				// justify-content: center;
+			}
+
 		}
 	}
 }
