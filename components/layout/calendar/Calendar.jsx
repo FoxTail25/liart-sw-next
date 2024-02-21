@@ -17,6 +17,8 @@ export default function Calendar() {
 	let calendarHTML;
 	let paintedCalendarMonth;
 
+
+
 	function getCalendarTable() {
 
 		let arrWeek = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
@@ -133,21 +135,16 @@ export default function Calendar() {
 
 			if (!elemHasEventListener_color.includes(date)) {
 
-				date.addEventListener('mouseover', function () {
+				function changeBgAndColor() {
 					let a = this.style.color;
 					let b = this.style.background;
 					this.style.color = b;
 					this.style.background = a;
-				})
-				date.addEventListener('mouseleave', function () {
-					let a = this.style.color;
-					let b = this.style.background;
-					this.style.color = b;
-					this.style.background = a;
-					// [this.style.color, this.style.background] = [this.style.background, this.style.color]
-				})
+				}
+
+				date.addEventListener('mouseover', changeBgAndColor)
+				date.addEventListener('mouseleave', changeBgAndColor)
 				elemHasEventListener_color.push(date)
-				// console.log(elemHasEventListener)
 			}
 			setTimeout(() => {
 				date.title += eventTitle + '. '
