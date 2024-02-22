@@ -63,6 +63,27 @@
 			display: flex;
 			height: calc(100%);
 
+			button {
+				border: none;
+				cursor: pointer;
+				background: var(--background-aside-left);
+				border-radius: 8px;
+
+				width: 30px;
+				padding: 0;
+
+				&:hover {
+					transition: .3s;
+					background: var(--font-aside-color);
+
+					svg {
+						fill: var(--background-aside-left)
+					}
+				}
+
+
+			}
+
 			.events {
 				// box-sizing: border-box;
 				height: calc(100%);
