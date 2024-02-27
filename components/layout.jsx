@@ -5,14 +5,21 @@ import Sw_menu from "./layout/sw_menu/sw_menu";
 import Footer from "./layout/footer/footer";
 import Aside_left from "./layout/aside_left/aside_left";
 import Head from "next/head";
+// import localFont from 'next/font/local';
+
+// const ptSerif_regular = localFont({
+//     src: '../fonts/PTSerif-Regular.ttf',
+//     display: 'swap',
+// })
 
 
 export default function Layout({ children }) {
 
     return <>
         <Head>
-        <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.ico" />
         </Head>
+        {/* <div className={`${l.layout}  ${ptSerif_regular.className}`}> */}
         <div className={l.layout}>
             <Sw_menu />
             <Header />

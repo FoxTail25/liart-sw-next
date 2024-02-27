@@ -19,12 +19,13 @@ export default function Header() {
                         <LogoRGBI />
                     </div>
 
+                    {/* <div className={`${h.content}, ${ptSerif_regular.className}`}> */}
                     <div className={h.content}>
-{/* <Image priority={true} src={profilePic} fill={true} alt='Logo_RGBI'/> */}
-                            <h5>Федеральное государственное бюджетное учреждение культуры</h5>
-                            <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br />БИБЛИОТЕКА ИСКУССТВ</h2>
-                            <p>"Искусство помогать искусству"</p>
-                       
+                        {/* <Image priority={true} src={profilePic} fill={true} alt='Logo_RGBI'/> */}
+                        <h5>Федеральное государственное бюджетное учреждение культуры</h5>
+                        <h2>РОССИЙСКАЯ ГОСУДАРСТВЕННАЯ <br />БИБЛИОТЕКА ИСКУССТВ</h2>
+                        <p>"Искусство помогать искусству"</p>
+
                     </div>
 
                     <div className={h.header_links}>
