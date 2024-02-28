@@ -1,55 +1,60 @@
 .layout {
-    
+
     transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
-    
+
     .main {
-        
+
         transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
-        
+
         text-align: center;
-        
+
         aside {
             transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
             width: var(--main_aside_width);
-            
+
             &.left {
                 background-color: var(--background-aside-left);
             }
-            
+
             &.right {
                 background-color: var(--background-aside-right);
             }
         }
-        
+
         main {
             width: calc(var(--maxwidth) - var(--main_aside_width) * 2);
-            
+            display: flex;
+            justify-content: center;
         }
+
         @media (max-width: 1000px) {
             .right {
                 display: none;
             }
+
             main {
 
-                width: calc(100vw - var(--main_aside_width) );
-                
+                width: calc(100vw - var(--main_aside_width));
+
             }
 
         }
+
         @media (max-width: 600px) {
             .left {
                 display: none;
             }
+
             main {
 
                 width: 100vw;
-                
+
             }
 
         }
     }
-    
+
     footer {
         transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
