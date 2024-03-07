@@ -1,0 +1,52 @@
+.about_library {
+    // margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 95%;
+    box-sizing: border-box;
+
+
+    .title_page {
+        text-align: center;
+        color: var(--font-color1);
+        font-size: 30px;
+        font-weight: 900;
+        padding: 5px 0;
+        letter-spacing: 0.3rem;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 var(--header-menu-background);
+        margin: 0;
+        // width: inherit;
+    }
+
+    .subpages {
+        text-align: left;
+        font-size: 20px;
+        padding: 0 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 var(--header-menu-background);
+        flex: 1;
+        margin: 10px 0;
+
+        .subpage {
+            margin: 5px 10px;
+            font-size: 22px;
+            list-style: none;
+            padding-top: 10px;
+
+            span {
+                // color: #6b001c;
+                color: var(--font-color2);
+            }
+
+            a {
+                // color: #6b001c;
+                color: var(--font-color2);
+            }
+
+        }
+
+    }
+}

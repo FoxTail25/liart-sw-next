@@ -1,4 +1,3 @@
-// import {query} from '@/getData/db'
 import { query } from '../../../../getData/db.js'
 
 export default async function handlerId(req, res) {

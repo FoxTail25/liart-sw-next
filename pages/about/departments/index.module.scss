@@ -1,0 +1,26 @@
+.wrapper{
+    font-size: 22px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    .title{
+        width: 100%;
+        color: #6b001c;
+        font-size: 30px;
+        font-weight: 900;
+        padding:15px 0;
+        letter-spacing: 0.5rem ;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #e0dcd0;
+        margin: 10px 20px 0 20px;
+    }
+    .departments_box{
+        margin: 10px 0 10px 0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #e0dcd0; 
+    }
+}

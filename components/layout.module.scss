@@ -26,6 +26,7 @@
             width: calc(var(--maxwidth) - var(--main_aside_width) * 2);
             display: flex;
             justify-content: center;
+            transition: inherit;
         }
 
         @media (max-width: 1000px) {

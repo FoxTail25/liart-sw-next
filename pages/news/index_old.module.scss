@@ -1,0 +1,80 @@
+.wrapper {
+    font-size: 18px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    box-sizing: border-box;
+    width: inherit;
+
+    .title {
+        width: 100%;
+        // color: #6b001c;
+        // font-size: 30px;
+
+        font-size: var(--font-size20);
+        font-weight: 900;
+        letter-spacing: 0.5rem;
+        color: var(--font-color2);
+
+        text-align: left;
+        border-radius: 10px;
+        // box-shadow: 0 0 10px 0 #e0dcd0;
+        box-shadow: 0 0 10px 0 var(--header-menu-background);
+        margin: 10px 0 10px 0;
+        padding: 10px 0;
+    }
+
+    .content {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 var(--header-menu-background);
+        // box-shadow: 0 0 10px 0 #e0dcd0;
+        flex: 1;
+
+        color: var(--font-color1);
+
+    }
+
+    a.all_news {
+        text-decoration: none;
+        color: #6b001c;
+        text-align: left;
+        font-weight: 700;
+        text-decoration: 2px underline;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+    }
+
+
+    .wrapper_pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        .previous {
+            width: 28px;
+            height: 28px;
+            background: url('/icons/previous-go.svg') no-repeat;
+            background-size: cover;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .7));
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .7));
+
+        }
+
+        .next {
+            width: 28px;
+            height: 28px;
+            background: url('/icons/next-go.svg') no-repeat;
+            background-size: cover;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .7));
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .7));
+        }
+    }
+}

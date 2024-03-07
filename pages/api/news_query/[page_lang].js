@@ -1,11 +1,10 @@
-// import {query} from '@/getData/db'
 import { query } from '../../../getData/db.js'
 
 
 export default async function news(req, res) {
   if (req.method === 'GET') {
     const { page_lang } = req.query
-    console.log(page_lang.split('_')[1], Number(page_lang.split('_')[0] - 1) * 10);
+    // console.log(page_lang.split('_')[1], Number(page_lang.split('_')[0] - 1) * 10);
     const news = await query({
       query: `SELECT *
       FROM news_news

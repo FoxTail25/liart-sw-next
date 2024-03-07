@@ -5,18 +5,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100%;
+    min-height: inherit;
     box-sizing: border-box;
+    width: inherit;
+    color: var(--font-color2);
+    background-color: var(--background-main);
+    transition: inherit;
 
     .title {
         width: 100%;
-        color: #6b001c;
+        color: inherit;
         // font-size: 30px;
 
         font-size: var(--font-size20);
         font-weight: 900;
         letter-spacing: 0.5rem;
-        color: var(--font-color2);
+        // color: var(--font-color2);
 
         text-align: left;
         border-radius: 10px;
@@ -40,7 +44,7 @@
 
     a.all_news {
         text-decoration: none;
-        color: #6b001c;
+        color: var(--font-color2);
         text-align: left;
         font-weight: 700;
         text-decoration: 2px underline;

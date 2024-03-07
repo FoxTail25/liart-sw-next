@@ -1,0 +1,30 @@
+.box_num {
+    width: 40px;
+    height: 25px;
+    background: var(--background-header);
+    color: var(--font-header-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 6px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 var(--font-header-color);
+
+    cursor: pointer;
+}
+
+.change {
+    width: 45px;
+    height: 30px;
+    background: var(--background-header);
+    color: var(--font-header-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 6px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 var(--font-header-color);
+
+    cursor: pointer;
+}
