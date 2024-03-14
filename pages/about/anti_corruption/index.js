@@ -1,5 +1,5 @@
 import useTemplateLinkPage from "../../../hooks/templateLinkPage/useTemplateLinkPage"
-import Layout from "../../../components/layout"
+// import Layout from "../../../components/layout"
 
 const dataDepartments = [
     {
@@ -35,14 +35,17 @@ const dataDepartments = [
     {
         name: 'ОУведомление о получении подарка',
         link: 'scan_2017-07-14-35-04.jpg'
-    }  
+    }
 ]
 
 export default function DepartmentsPage() {
     const linkPage = useTemplateLinkPage(dataDepartments, 'Отделы библиотеки', 'Отделы библиотеки', '/media/files/img/11072017/')
-    return(
-        <Layout>
+    return (
+        // <Layout>
+        <>
+
             {linkPage.getRendiring()}
-        </Layout>
+        </>
+        // </Layout>
     )
 }

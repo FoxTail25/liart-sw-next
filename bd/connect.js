@@ -6,9 +6,10 @@ class Connector {
 		const year = date.getFullYear();
 		// const getMonth = date.getMonth();
 
-		// let answer = await pool.query(`select * from year${year}`)
-		// return answer
-		console.log(year)
+		let answer = await pool.query(`select * from year${year}`)
+		// console.log(answer)
+		// console.log('connect', year)
+		return answer.rows
 
 	}
 }

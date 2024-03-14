@@ -5,6 +5,7 @@ import hm from './headrmenu.module.scss';
 import Sw_logo from '../sw_logo/sw_logo';
 import header_menu from '../../../data/header_menu';
 import aside_left_menu from '../../../data/aside_left_menu';
+import Search from '../search/search';
 
 export default function HeaderMenu() {
 
@@ -13,14 +14,14 @@ export default function HeaderMenu() {
 
 
 
-    let header_menuItem = header_menu.map((el, ind) => <MenuItem key={ind}{...{...el, desktop:true}} />)
+    let header_menuItem = header_menu.map((el, ind) => <MenuItem key={ind}{...{ ...el, desktop: true }} />)
     let header_mobilMenuItem = header_menu.map((el, ind) => <MenuItem key={ind} {...el} />)
 
     let aside_left_menuItem = aside_left_menu.map((el, ind) => <MenuItem key={ind}{...el} />)
 
 
 
-    return (
+    return <>
         <div className={hm.header_menu}>
 
 
@@ -28,7 +29,7 @@ export default function HeaderMenu() {
                 {header_menuItem}
             </nav>
 
-            <div className={hm.mobil_leftAside_menu} onClick={() => {setAsideMenuOpen(!asideMenuOpen), setMobilMenuOpen(false)}}>
+            <div className={hm.mobil_leftAside_menu} onClick={() => { setAsideMenuOpen(!asideMenuOpen), setMobilMenuOpen(false) }}>
 
 
                 {
@@ -47,8 +48,8 @@ export default function HeaderMenu() {
                     <span></span>
                 </div>
 
-                <span>
-                    ASIDE
+                <span className='left'>
+                    РАЗДЕЛЫ
                 </span>
             </div>
 
@@ -56,7 +57,7 @@ export default function HeaderMenu() {
                 <Sw_logo />
             </div>
 
-            <div className={hm.mobil_menu} onClick={() => {setMobilMenuOpen(!mobilMenuOpen), setAsideMenuOpen(false)}}>
+            <div className={hm.mobil_menu} onClick={() => { setMobilMenuOpen(!mobilMenuOpen), setAsideMenuOpen(false) }}>
                 {
                     mobilMenuOpen &&
                     <nav>
@@ -78,6 +79,10 @@ export default function HeaderMenu() {
                 </div>
 
             </div>
+
+
         </div>
-    )
+        <Search />
+    </>
+
 }

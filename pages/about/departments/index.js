@@ -1,5 +1,5 @@
 import useTemplateLinkPage from "../../../hooks/templateLinkPage/useTemplateLinkPage"
-import Layout from "../../../components/layout"
+// import Layout from "../../../components/layout"
 
 
 const dataDepartments = [
@@ -52,14 +52,13 @@ const dataDepartments = [
         name: 'Отдел комплектования',
         icon: '/acquisition.svg',
         link: '/each_department/245'
-    }   
+    }
 ]
 
 export default function DepartmentsPage() {
     const linkPage = useTemplateLinkPage(dataDepartments, 'Отделы библиотеки', 'Отделы библиотеки', '/about/departments/')
-    return(
-        <Layout>
-            {linkPage.getRendiring()}
-        </Layout>
-    )
+    return <>
+        {linkPage.getRendiring()}
+    </>
+
 }

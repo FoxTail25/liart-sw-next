@@ -1,7 +1,7 @@
 import Head from "next/head";
 import CardRules from "../../../components/layout/card/Card";
 import styles from './index.module.scss'
-import Layout from "../../../components/layout"
+// import Layout from "../../../components/layout"
 
 const dataDepartments = [
     {
@@ -19,29 +19,29 @@ const dataDepartments = [
         icon: '/concept_for_development.png',
         href: 'concept_for_development.pdf'
     },
-    
+
 ]
 
 export default function DepartmentsPage() {
 
-    return(
-        <Layout>
-            <div className={styles.wrapper}>
-                <Head>
-                    <title>Нормативные документы</title>
-                </Head>
-                <h1 className={styles.title} >Нормативные документы</h1>
-                <div className={styles.departments_box}>
-                    {dataDepartments.map((department, index) => <CardRules
+    return (
+        // <Layout>
+        <div className={styles.wrapper}>
+            <Head>
+                <title>Нормативные документы</title>
+            </Head>
+            <h1 className={styles.title} >Нормативные документы</h1>
+            <div className={styles.departments_box}>
+                {dataDepartments.map((department, index) => <CardRules
                     key={index}
                     icon={department.icon}
                     title={department.title}
                     href={department.href}
                     slug='documents'
-                    />)}
-                </div>
+                />)}
             </div>
-        </Layout>
+        </div>
+        // </Layout>
     )
 }
 

@@ -1,41 +1,71 @@
-.card_container{
-    width: 95%;
-    height: 200px;
+.card_container {
+    // width: 95%;
+    // height: 200px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
     text-decoration: none;
-    color: #000;
-    text-shadow: 1px 0 1px #fff, 
-    0 1px 1px #fff, 
-    -1px 0 1px #fff, 
-    0 -1px 1px #fff;
+    color: var(--font-color1);
+    // text-shadow: 1px 0 1px #fff,
+    //     0 1px 1px #fff,
+    //     -1px 0 1px #fff,
+    //     0 -1px 1px #fff;
     font-weight: 700;
     // background: #669bbc;
-    box-shadow: 0 -15px 10px -10px #ddd;
+    box-shadow: 0 5px 5px 0px var(--header-menu-background);
     margin: 10px;
     padding: 5px;
-    background: #fff;
-    .icon{
-        img{
+    background: var(--background-main);
+
+    overflow: hidden;
+
+    @media (max-width: 374px) {
+        // width: 50%;
+        padding: 0;
+        margin: 5px 0;
+    }
+
+    .icon {
+        // @media (max-width: 767px) {
+        //     width: 50%;
+        // }
+
+        img {
             object-fit: contain;
             width: 180px;
             height: 180px;
-            margin: 10px ;
+            margin: 10px;
             // background:  radial-gradient(#ffefd5, #fff);
-            box-shadow: 0 0 10px 0 #999;
+            // box-shadow: 0 0 10px 0 var(--header-menu-background);
+            border: none;
             border-radius: 5%;
+
+            @media (max-width: 767px) {
+                width: 100px;
+                height: 100px;
+                box-sizing: border-box;
+                border: none;
+                margin: 0;
+            }
         }
+
     }
-    .text_container{
+
+    .text_container {
         margin: 30px;
         font-size: 20px;
         text-align: left;
         padding-left: 20px;
-        .goTo{
+
+        @media (max-width: 767px) {
+            margin: 10px 5px;
+            padding: 0;
+        }
+
+        .goTo {
             padding-top: 15px;
-            color: #6b001c;
-            text-decoration: underline #7a0021;
+            color: var(--font-color2);
+            text-decoration: underline var(--font-color2);
             font-size: 25px;
         }
     }

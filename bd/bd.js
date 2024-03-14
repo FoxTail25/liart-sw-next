@@ -10,3 +10,5 @@ const pool = new pg.Pool({
 	password: process.env.CALEND_PASSWORD,
 	database: process.env.CALEND_DB
 })
+
+export default pool

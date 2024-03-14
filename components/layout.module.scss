@@ -8,6 +8,8 @@
 
         text-align: center;
 
+        background: var(--background-main);
+
         aside {
             transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 

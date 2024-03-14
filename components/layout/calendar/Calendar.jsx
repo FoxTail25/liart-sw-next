@@ -97,10 +97,15 @@ export default function Calendar() {
 
 
 	async function getEvent() {
+		let res2 = await fetch('http://localhost:3000/api/calendar_bd').then(res => res.json()).catch(err => console.log('ошибка....', err));
+		console.log('res2', res2)
+
 		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 		// let res = await fetch('http://192.168.1.39:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
+
 		// let res = await fetch('http://calendar.liart.ru/api/month_events.php', { mode: 'no-cors' }).then(ev => ev).catch(err => { console.log('error:', err); return err })
 		// console.log(typeof res, res.body)
+
 
 
 		paintEventOnCalendar(res)
@@ -121,9 +126,13 @@ export default function Calendar() {
 	function paintEventOnCalendar(arrEvent) {
 		// console.log(arrEvent);
 		// console.log(calendarHTML);
+
 		let thisMonthEvent = arrEvent.filter(e => e.dateStart.includes(`${(paintedCalendarMonth + 1 + '').padStart(2, '0')}.2024`));
+
 		// console.log('thisMonthEvent', thisMonthEvent);
+
 		let ThisMounthDay = calendarHTML.querySelectorAll('tr td')
+
 		// console.log('ThisMounthDay', ThisMounthDay);
 		let elemHasEventListener_color = [];
 		let elemHasEventListener_func = [];

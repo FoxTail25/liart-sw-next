@@ -15,19 +15,16 @@
     .title {
         width: 100%;
         color: inherit;
-        // font-size: 30px;
 
-        font-size: var(--font-size20);
+        font-size: var(--font-size30);
         font-weight: 900;
         letter-spacing: 0.5rem;
-        // color: var(--font-color2);
 
-        text-align: left;
+        text-align: center;
         border-radius: 10px;
-        // box-shadow: 0 0 10px 0 #e0dcd0;
         box-shadow: 0 0 10px 0 var(--header-menu-background);
-        margin: 10px 0 10px 0;
-        padding: 10px 0;
+        margin: 10px 0 0 0;
+        padding: 5px 0;
     }
 
     .content {

@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import AppContext from '../../store/myContext';
 import CardNews from '../../components/layout/card_news/CardNews'
 import Pagination from '../../components/layout/pagination/Pagination';
-import Layout from '../../components/layout';
+// import Layout from '../../components/layout';
 import styles from './index.module.scss'
 
 export async function getServerSideProps({ params }) {

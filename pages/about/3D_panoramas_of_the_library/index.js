@@ -1,5 +1,5 @@
 import useTemplateLinkPage from '../../../hooks/templateLinkPage/useTemplateLinkPage'
-import Layout from '../../../components/layout'
+// import Layout from '../../../components/layout'
 
 
 const dataPage = [
@@ -22,8 +22,7 @@ const dataPage = [
 ]
 export default function Page3DPanoramasOfTheLibrary() {
     const linkPage = useTemplateLinkPage(dataPage, '3D панорамы библиотеки', '3D панорамы библиотеки')
-    return(<Layout>
+    return <>
         {linkPage.getRendiring()}
-    </Layout>
-    )
+    </>
 }

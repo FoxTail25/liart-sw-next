@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+// import Layout from '../../components/layout'
 import useTemplateLinkPage from '../../hooks/templateLinkPage/useTemplateLinkPage'
 
 const dataPage = [
@@ -43,8 +43,7 @@ const dataPage = [
 
 export default function ArchiveNewsPages() {
     const pageTemplateLink = useTemplateLinkPage(dataPage, 'Архив новостей', 'Архив новостей')
-    return(<Layout>
+    return <>
         {pageTemplateLink.getRendiring()}
-        </Layout>
-    )
+    </>
 }
