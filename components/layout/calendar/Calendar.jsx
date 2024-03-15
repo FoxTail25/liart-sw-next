@@ -91,16 +91,19 @@ export default function Calendar() {
 		calend_block.current.innerHTML = '';
 		getCalendarTable()
 		calend_block.current.appendChild(calendarHTML);
-		getEvent()
+		getEvent(calendarMonth.getMonth(), calendarMonth.getFullYear())
 	}, [calendarMonth])
 
 
 
-	async function getEvent() {
-		let res2 = await fetch('http://localhost:3000/api/calendar_bd').then(res => res.json()).catch(err => console.log('ошибка....', err));
-		console.log('res2', res2)
+	async function getEvent(month = 12, year = 2024) {
+		console.log('месяц', month)
+		let res_bd = await fetch(`http://localhost:3000/api/calendar_bd/?month=${month}&year=${year}`).then(res => res.json()).catch(err => console.log('ошибка....', err));
+		console.log('res_bd', res_bd)
 
 		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
+
+		console.log(res)
 		// let res = await fetch('http://192.168.1.39:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 
 		// let res = await fetch('http://calendar.liart.ru/api/month_events.php', { mode: 'no-cors' }).then(ev => ev).catch(err => { console.log('error:', err); return err })
@@ -121,19 +124,12 @@ export default function Calendar() {
 		return date.toLocaleString('ru-RU', { month: "long" })
 	}
 
-
-
 	function paintEventOnCalendar(arrEvent) {
-		// console.log(arrEvent);
-		// console.log(calendarHTML);
 
 		let thisMonthEvent = arrEvent.filter(e => e.dateStart.includes(`${(paintedCalendarMonth + 1 + '').padStart(2, '0')}.2024`));
 
-		// console.log('thisMonthEvent', thisMonthEvent);
-
 		let ThisMounthDay = calendarHTML.querySelectorAll('tr td')
 
-		// console.log('ThisMounthDay', ThisMounthDay);
 		let elemHasEventListener_color = [];
 		let elemHasEventListener_func = [];
 
@@ -171,8 +167,6 @@ export default function Calendar() {
 					elemHasEventListener_func.push(date)
 				}
 			}, index * 30)
-
-			// console.log(date)
 
 		})
 	}

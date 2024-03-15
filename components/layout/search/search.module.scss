@@ -4,9 +4,29 @@
 	max-width: 1024px;
 	margin: 0 auto;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	// justify-content: center;
+	align-items: center;
 	color: var(--font-color2);
 	transition: inherit;
+
+	// .check {
+	// 	display: block;
+	// 	margin: 0 auto;
+	// }
+
+	label {
+		cursor: pointer;
+		padding: 0 15px;
+		display: inline-block;
+		input {
+			cursor: pointer;
+		}
+
+		@media (max-width:400px) {
+			display: block;
+		}
+	}
 
 	form {
 		padding-bottom: 10px;
@@ -20,18 +40,6 @@
 
 
 
-		label {
-			cursor: pointer;
-			padding: 0 15px;
-			display: inline-block;
-			input {
-				cursor: pointer;
-			}
-
-			@media (max-width:400px) {
-				display: block;
-			}
-		}
 
 		.searchblock {
 			display: flex;

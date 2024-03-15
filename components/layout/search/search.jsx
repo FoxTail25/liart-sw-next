@@ -40,12 +40,6 @@ export default function Search() {
 	return <>
 		<div className={s.search_container}>
 
-			<form ref={opacForm}
-				onSubmit={onSubmit}
-				target="_blank"
-				method="POST"
-				action="http://opac.liart.local/find"
-			>
 				<div className={s.check}>
 					<label>
 						<input type="radio" name='search' defaultChecked onChange={() => setSearch('opac')} />&nbsp;Поиск&nbsp;в&nbsp;базе&nbsp;OPAC
@@ -57,6 +51,12 @@ export default function Search() {
 					</label>
 				</div>
 
+			<form ref={opacForm}
+				onSubmit={onSubmit}
+				target="_blank"
+				method="POST"
+				action="http://opac.liart.local/find"
+			>
 
 				<div className={s.searchblock}>
 
@@ -87,7 +87,7 @@ export default function Search() {
 			<form
 				ref={siteForm}
 				onSubmit={onSubmit}
-				action="https://yandex.ru/"
+				action="https://ya.ru/"
 				name="f"
 				target="_blank"
 				className={s.yandexform}

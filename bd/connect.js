@@ -2,15 +2,18 @@ import pool from './bd.js';
 
 class Connector {
 
-	async getMonth(date) {
-		const year = date.getFullYear();
-		// const getMonth = date.getMonth();
+	async getMonth(month, year) {
 
-		let answer = await pool.query(`select * from year${year}`)
-		// console.log(answer)
-		// console.log('connect', year)
+		console.log(year)
+
+		const dateStart = new Date(+year, month, 1).toISOString()
+		const dateEnd = new Date(+year, (month+1 ), 1).toISOString()
+
+		console.log(dateStart, dateEnd)
+		
+		let answer = await pool.query(`select * from year${year} where datestart between '${dateStart}' and  '${dateEnd}' order by datestart`)
+
 		return answer.rows
-
 	}
 }
 
