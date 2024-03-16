@@ -97,13 +97,13 @@ export default function Calendar() {
 
 
 	async function getEvent(month = 12, year = 2024) {
-		console.log('месяц', month)
+		// console.log('месяц', month)
 		let res_bd = await fetch(`http://localhost:3000/api/calendar_bd/?month=${month}&year=${year}`).then(res => res.json()).catch(err => console.log('ошибка....', err));
-		console.log('res_bd', res_bd)
+		// console.log('res_bd', res_bd)
 
 		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 
-		console.log(res)
+		// console.log(res)
 		// let res = await fetch('http://192.168.1.39:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 
 		// let res = await fetch('http://calendar.liart.ru/api/month_events.php', { mode: 'no-cors' }).then(ev => ev).catch(err => { console.log('error:', err); return err })

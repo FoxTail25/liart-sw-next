@@ -3,6 +3,7 @@ import aside_left_menu from "../../../data/aside_left_menu";
 import BannerLeftAside from "../aside_left_banner/aside_left_banner";
 import Calendar from '../calendar/Calendar';
 import Aside_menu_item from "../menuitem_aside/menuitem_aside";
+import Today from '../today/Today';
 import al from './aside_left.module.scss';
 
 export default function Aside_left() {
@@ -19,6 +20,8 @@ export default function Aside_left() {
         <Calendar />
 
         <a className={al.month} href='http://official.liart.ru/calendars/month.pdf' target='_blank'>Афиша на месяц</a>
+
+        <Today/>
 
         <nav className={al.aside_nav_menu}>
             {aside_menu}
