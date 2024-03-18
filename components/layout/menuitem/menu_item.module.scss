@@ -9,7 +9,6 @@
     
     position: relative;
     
-    transition: var(--transition-color-time);
     
     .drop_btn {
         flex-grow: 1;
@@ -25,16 +24,12 @@
         align-items: center;
         
         &.active, &:hover {
-            // transition: var(--transition-color-time);
             background: var(--header-menu-background);
             color: var(--font-color-header-hover);
         }
     }
     
-    // &::after, &::before {
-        //     content: '|';
-        // }
-        
+
         .drop_content {
             position: absolute;
             display: none;
@@ -54,7 +49,6 @@
                     
                     &.active, &:hover {
                         text-decoration: underline;
-                        transition: var(--transition-color-time);
                         background: var(--header-menu-background);
                         color: var(--font-color-header-hover);
                     }

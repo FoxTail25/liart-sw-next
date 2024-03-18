@@ -1,6 +1,5 @@
 .container {
     background: var(--background-header);
-    transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time);
 }
 
 .header {
@@ -16,7 +15,6 @@
 
     .content {
         width: calc(var(--maxwidth) - var(--header_aside_width)*2);
-        transition: background var(--transition-bg-time);
         // background: var(--background-header-image);
         // max-width: 554px;
         position: relative;

@@ -2,8 +2,7 @@
 
 export default function TodayEvent({datestart, dateend, title, description, ...rest}) {
 
-	// console.log('todayEvent', rest)
-	// datestart = new Date(datestart).toLocaleDateString('ru-RU')
+
 	function reformationDate(date) {
 		
 		const options = {

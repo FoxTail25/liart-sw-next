@@ -204,6 +204,7 @@ html, body {
     --transition-color-time: .2s;
     --transition-font-size-time: .1s;
     --transition-letter-spasing-time: .1s;
+    
 }
 
 
@@ -216,8 +217,8 @@ body {
 
     letter-spacing: var(--letter-spasing);
 
-    transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
-
+    /* transition: background var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time); */
+    
     display: none;
 }
 
@@ -233,3 +234,4 @@ img {
 .flex_row {
     display: flex;
 }
+

@@ -1,17 +1,14 @@
 .layout {
 
-    transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
     .main {
 
-        transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
         text-align: center;
 
         background: var(--background-main);
 
         aside {
-            transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
             width: var(--main_aside_width);
 
@@ -28,7 +25,6 @@
             width: calc(var(--maxwidth) - var(--main_aside_width) * 2);
             display: flex;
             justify-content: center;
-            transition: inherit;
         }
 
         @media (max-width: 1000px) {
@@ -59,7 +55,6 @@
     }
 
     footer {
-        transition: var(--transition-bg-time), color var(--transition-color-time), font-size var(--transition-font-size-time), letter-spacing var(--transition-letter-spasing-time);
 
         background-color: var(--background-footer);
         text-align: center;

@@ -5,7 +5,6 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(108, 108, 108, 0.696);
-	transition: .5s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,7 +39,6 @@
 			background: var(--font-aside-color);
 			color: var(--background-aside-left);
 			border: none;
-			transition: .2s;
 
 			&:hover {
 				background: var(--background-aside-left);
@@ -73,7 +71,6 @@
 				padding: 0;
 
 				&:hover {
-					transition: .3s;
 					background: var(--font-aside-color);
 
 					svg {
