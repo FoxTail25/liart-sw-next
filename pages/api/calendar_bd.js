@@ -1,7 +1,7 @@
 import calendarConnect from '../../bd/connect';
 
 export default async function handler(req, res) {
-	console.log(req.query)
+	// console.log(req.query)
 	let month = +req.query.month
 	let year = +req.query.year
 
