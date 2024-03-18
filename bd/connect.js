@@ -19,7 +19,7 @@ class Connector {
 
 	async getToday() {
 		// pool.open()
-		const date = new Date()
+		const date = new Date(2024, 2, 14)
 		const isoDate = date.toISOString()
 		const year = date.getFullYear()
 

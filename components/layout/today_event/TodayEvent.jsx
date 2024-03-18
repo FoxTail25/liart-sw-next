@@ -1,4 +1,4 @@
-// import te from './todayevent.module.scss';
+import te from './todayevent.module.scss';
 
 export default function TodayEvent({datestart, dateend, title, description, ...rest}) {
 
@@ -8,7 +8,7 @@ export default function TodayEvent({datestart, dateend, title, description, ...r
 		const options = {
 			// weekday: 'long',
 			year: 'numeric',
-			month: 'long',
+			month: 'numeric',
 			day: 'numeric',
 			hour: 'numeric',
 			minute: 'numeric',
@@ -17,10 +17,10 @@ export default function TodayEvent({datestart, dateend, title, description, ...r
 		return new Date(date).toLocaleDateString('ru-RU', options)
 	}
 
-	return <>
-		<p>{title}</p>
+	return <div className={te.container}>
+		<p className={te.title}>{title}</p>
 		<p>начало: {reformationDate(datestart)}</p>
 		<p>конец: {reformationDate(dateend)}</p>
 		<hr/>
-	</>
+	</div>
 }

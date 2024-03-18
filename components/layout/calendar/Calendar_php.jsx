@@ -99,12 +99,11 @@ export default function Calendar() {
 	async function getEvent(month = 12, year = 2024) {
 		// console.log('месяц', month)
 		let res_bd = await fetch(`http://localhost:3000/api/calendar_bd/?month=${month}&year=${year}`).then(res => res.json()).catch(err => console.log('ошибка....', err));
-		console.log('res_bd', changeFormatEventArr(res_bd))
+		console.log('res_bd', res_bd)
 
+		let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 
-		// let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
-
-		// console.log('res_php', res)
+		console.log('res_php', res)
 		// let res = await fetch('http://192.168.1.39:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
 
 		// let res = await fetch('http://calendar.liart.ru/api/month_events.php', { mode: 'no-cors' }).then(ev => ev).catch(err => { console.log('error:', err); return err })
@@ -112,8 +111,7 @@ export default function Calendar() {
 
 
 
-		// paintEventOnCalendar(res)
-		paintEventOnCalendar(changeFormatEventArr(res_bd))
+		paintEventOnCalendar(res)
 	}
 
 	function cangeMonth(mod) {
@@ -180,31 +178,11 @@ export default function Calendar() {
 			: [index]
 	};
 
-	function changeFormatEventArr(dataArr) {
-		let resultArr = dataArr.map(e => {
-			// console.log(e);
-			let { datestart, dateend, location, title, description, link } = e;
-			return {
-				dateStart: changeTimeFormat(datestart),
-				dateEnd: changeTimeFormat(dateend),
-				location: (location != 'null' ? location : ""),
-				description,
-				title,
-				link
-			}
-		})
-
-		function changeTimeFormat(date) {
-			let time = new Date(date)
-			return `${getString(time.getDate())}.${getString(time.getMonth()+1)}.${time.getFullYear()} ${getString(time.getHours())}:${getString(time.getMinutes())}`
-		}
-
-		function getString(num) {
-			return String(num).padStart(2,0)
-		}
-
-		return resultArr
-	}
+	// function changeFormat(dataArr) {
+	// 	let resultArr = dataArr.map( e => {
+	// 		 return { dateStart: datestart, dateEnd: dateend} = {...e}
+	// 		})
+	// }
 
 
 
