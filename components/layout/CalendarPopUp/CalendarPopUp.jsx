@@ -31,7 +31,7 @@ export default function CalendarPopUp({ ...props }) {
 		} else if (i == indexOfEvent.length - 1 && n == 1) {
 			i = -1;
 		}
-		console.log('nnnnn', i);
+		// console.log('nnnnn', i);
 
 		setIndex(indexOfEvent[i + n])
 

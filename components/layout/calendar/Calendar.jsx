@@ -3,7 +3,6 @@ import cb from './calendar.module.scss';
 import CalendarPopUp from '../CalendarPopUp/CalendarPopUp';
 
 
-
 export default function Calendar() {
 
 	let [calendarMonth, setCalendarMonth] = useState(new Date());
@@ -16,7 +15,7 @@ export default function Calendar() {
 
 	let calendarHTML;
 	let paintedCalendarMonth;
-
+	let paintedCalendarYear;
 
 
 	function getCalendarTable() {
@@ -28,6 +27,7 @@ export default function Calendar() {
 		tableName.innerHTML = `Календарь на ${g_date.toLocaleString('ru-Ru', { month: 'long' })} <br/> ${g_date.getFullYear()} года`;
 		tableName.dataset.month = g_date.getMonth()
 		paintedCalendarMonth = g_date.getMonth()
+		paintedCalendarYear = g_date.getFullYear()
 		calendar.appendChild(tableName)
 
 		let th = document.createElement('thead');
@@ -56,7 +56,6 @@ export default function Calendar() {
 	}
 
 	function getArrDate(date) {
-		// arrDate =[]
 		g_date = date
 		let thisMonth = date.getMonth();
 		let thisYear = date.getFullYear();
@@ -65,23 +64,17 @@ export default function Calendar() {
 			firsWeekDayThisMonth = 7;
 		}
 		let lastDateThsMonth = new Date(thisYear, thisMonth + 1, 0).getDate();
-		// let nextMonthDate = 1;
 		for (let index = 0; index < 35; index++) {
 			if (index + 1 < firsWeekDayThisMonth) {
-				// let date = new Date(thisYear, thisMonth, (1 - firsWeekDayThisMonth + index + 1)).getDate();
-				// arrDate.push({ date, month: thisMonth - 1 });
 				arrDate.push('');
 			} else if (index > lastDateThsMonth + firsWeekDayThisMonth - 2) {
 
-				// arrDate.push({ date:nextMonthDate++, month: thisMonth + 1 });
 				arrDate.push('')
 			} else {
 				arrDate.push({ date: index + 1 - firsWeekDayThisMonth + 1, month: thisMonth })
 			}
 		}
-
 	}
-
 
 
 	let calend_block = useRef();
@@ -99,7 +92,7 @@ export default function Calendar() {
 	async function getEvent(month = 12, year = 2024) {
 		// console.log('месяц', month)
 		let res_bd = await fetch(`http://localhost:3000/api/calendar_bd/?month=${month}&year=${year}`).then(res => res.json()).catch(err => console.log('ошибка....', err));
-		console.log('res_bd', changeFormatEventArr(res_bd))
+		// console.log('res_bd', changeFormatEventArr(res_bd))
 
 
 		// let res = await fetch('http://localhost:3000/api/calendar').then(res => res.json()).catch(err => console.log('ошибка....', err));
@@ -111,8 +104,6 @@ export default function Calendar() {
 		// console.log(typeof res, res.body)
 
 
-
-		// paintEventOnCalendar(res)
 		paintEventOnCalendar(changeFormatEventArr(res_bd))
 	}
 
@@ -128,7 +119,7 @@ export default function Calendar() {
 
 	function paintEventOnCalendar(arrEvent) {
 
-		let thisMonthEvent = arrEvent.filter(e => e.dateStart.includes(`${(paintedCalendarMonth + 1 + '').padStart(2, '0')}.2024`)); // calendar_php
+		let thisMonthEvent = arrEvent.filter(e => e.dateStart.includes(`${(paintedCalendarMonth + 1 + '').padStart(2, '0')}.${paintedCalendarYear}`)); // calendar_php
 		// let thisMonthEvent = arrEvent.filter(e => e.datestart.includes(`${(paintedCalendarMonth + 1 + '').padstart(2, '0')}.2024`)); // calendsr_bd
 
 		let ThisMounthDay = calendarHTML.querySelectorAll('tr td')
